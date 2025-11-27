@@ -1,0 +1,166 @@
+# flair project file
+Version: 300
+Mode: fluka
+Title: schermatura
+md5: 794ff9f484af14549c9e172a9dd650cf
+Input:
+#define energy -0.010
+#define thickness 0.03
+PHYSICS COALESCE 1
+PHYSICS EVAPORAT 3
+TITLE
+	schermatura
+*Set the defaults for precision simulations
+DEFAULTS PRECISIO
+BEAM PROTON $energy,, =atan(0.75/40)*2*1000 -0.3 -0.3 1.0
+	scale=5000
+	@select=1
+*Define the beam position
+BEAMPOS ,,, -40
+GEOBEGIN COMBNAME
+*Black body
+SPH blkbody 0.0 0.0 0.0 500
+*Cylindrical target
+RCC target 0.0 0.0 0.0 0.0 0.0 $thickness 0.75
+RPP box_1 -250 250 -220 280 -250 250
+	@select=8
+RPP box_2 -150 150 -120 180 -150 150
+	@select=8
+END
+*Black hole
+REGION BLKBODY 5
+	-blkbody
+*Void around
+REGION VOID 5
+	+blkbody -target -box_1
+*Target
+REGION TARGET 5
+	+target
+REGION WALL
+	+box_1 -box_2
+REGION AIR
+	+box_2 -target
+END
+GEOEND
+*Isotopes, material and compound definition
+MATERIAL MO_100 42,, 10.22,,, 100
+LOW-MAT 100-MO MO_100 42 100 296
+MATERIAL MO_98 42,, 10.22,,, 98
+LOW-MAT 98-MO MO_98 42 98 296
+MATERIAL MO_97 42,, 10.22,,, 97
+LOW-MAT 97-MO MO_97 42 97 296
+MATERIAL MO_96 42,, 10.22,,, 96
+LOW-MAT 96-MO MO_96 42 96 296
+MATERIAL MO_95 42,, 10.22,,, 95
+LOW-MAT 95-MO MO_95 42 95 296
+MATERIAL MO_94 42,, 10.22,,, 94
+LOW-MAT 94-MO MO_94 42 94 296
+MATERIAL MO_92 42,, 10.22,,, 92
+LOW-MAT 92-MO MO_92 42 92 296
+MATERIAL MOLYB,,, 10.22
+COMPOUND MOLYB 0.9986 MO_100 0.00115 MO_98 0.0005 MO_97 0.0005 MO_96 0.0005 MO_95 \
+	 0.0005 MO_94 0.0005 MO_92
+MATERIAL POTASSIU 19,, 0.862
+*Concrete portland
+*Concrete has a wide variation in density and composition.
+MATERIAL PORTLAND,,, 2.3
+COMPOUND PORTLAND -0.01 HYDROGEN -0.001 CARBON -0.529107 OXYGEN -0.016 SODIUM -0.002 \
+	 MAGNESIU -0.033872 ALUMINUM -0.337021 SILICON -0.013 POTASSIU \
+	 -0.044 CALCIUM -0.014 IRON
+ASSIGNMA , BLCKHOLE BLKBODY
+ASSIGNMA , VACUUM VOID
+ASSIGNMA , MOLYB TARGET
+ASSIGNMA , PORTLAND WALL
+ASSIGNMA , AIR AIR
+****************************************************************************
+*Requests simulation of radioactive decays and sets the corresponding
+*biasing and transport conditions
+RADDECAY , 1 1
+*Define an irradiation profile for radioactive decay calculations
+IRRPROFI , =1*hour 6241509074461
+*Defines decay times for radioactive product scoring
+DCYTIMES , 0.01
+USRBIN neu 10 NEUTRON -21 280 310 280 -280 -250 -280 100 100 100
+USRBIN pho 10 PHOTON -22 280 310 280 -280 -250 -280 100 100 100
+USRBIN doseEq 10 DOSE-EQ -23 280 310 280 -280 -250 -280 100 100 100
+*************************************************************************
+*Set the random number seed
+RANDOMIZ ,, 595959
+*Set the number of primary histories to be simulated in the run
+START , 150000
+STOP
+EndInput
+
+Page: Input
+Calculator:
+	|C_p = 1.602176634e-19
+	|I = 1e-6
+	|Qta = I/C_p
+	|> Qta = 6241509074460.763
+plotengine: Gnuplot
+
+# Run information
+Run: <default>
+	StartRun: 1679648513
+	queue:    *Default
+End
+Run: run
+	Define:   energy=-0.0192
+	Define:   thickness=0.0574
+	Status:   3
+	mode:     fluka
+	StartRun: 1683536773
+	queue:    *Default
+End
+Geometry: Geometry
+	Frame.vsplit: 0.5177865612648221
+End
+
+# Plots information
+Plot: Red
+	Type: Geometry
+	basisu: 0 0 1
+	basisv: 1 0 0
+	coord: Z-X
+	extends: 13.45883333333332 5.978876811594198
+	grid: 0
+	layer: Media
+	origin: 1.14845 0 10.1054
+End
+Plot: Green
+	Type: Geometry
+	basisu: 0.836516 0.0173377 0.547668
+	basisv: 0.224144 0.901221 -0.370891
+	extends: 515.9780351999996 229.64931490909072
+	layer: 3D
+	origin: 118.193 -50.984 112.846
+End
+Plot: Blue
+	Type: Geometry
+	basisu: 0 0 1
+	coord: Z-Y
+	extends: 891.6100448255986 365.745519332996
+	layer: Media
+	origin: 0 13.1276 262.033
+End
+Plot: Magenta
+	Type: Geometry
+	coord: X-Y
+	extends: 100.0 41.098484848484844
+	grid: 0
+	layer: Media
+	origin: -3.59748 0 7.89217
+End
+Plot: schermature_plot05
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: run_21.bnn
+	grid: 0
+	hist: 2D Projection
+	int: 3.2694129248517467
+	max: 5.97279723E-07
+	min: 7.44420476E-13
+	proj: Y
+	title: Plot #5
+End

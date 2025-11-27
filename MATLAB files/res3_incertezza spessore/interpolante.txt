@@ -1,0 +1,4 @@
+Parabola interpolante i delta spessori:
+0.0456x^2 + 1.0297x + -11.3293
+
+Valor medio differenza percentuale: 4.13 %

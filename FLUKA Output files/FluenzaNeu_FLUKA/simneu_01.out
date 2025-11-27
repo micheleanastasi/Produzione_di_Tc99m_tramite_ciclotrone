@@ -1,0 +1,84 @@
+*-* Running: simneu_01
+Dir: /home/michele/Desktop/FluenzaNeu_FLUKA
+Cmd: /usr/bin/nohup /usr/local/fluka/bin/rfluka -M 10 simneu_01
+
+                                   F L U K A
+
+Dir:   /usr/local/fluka
+Data:  /usr/local/fluka/data
+Exec:  /usr/local/fluka/bin/fluka
+Input: /home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01.inp
+Initial seed copied from /usr/local/fluka/data
+Running fluka in /home/michele/Desktop/FluenzaNeu_FLUKA/fluka_25928
+
+======================== Running FLUKA for cycle # 1 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01001_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01001_fort.32"
+======================== Running FLUKA for cycle # 2 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01002_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01002_fort.32"
+======================== Running FLUKA for cycle # 3 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01003_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01003_fort.32"
+======================== Running FLUKA for cycle # 4 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01004_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01004_fort.32"
+======================== Running FLUKA for cycle # 5 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01005_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01005_fort.32"
+======================== Running FLUKA for cycle # 6 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01006_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01006_fort.32"
+======================== Running FLUKA for cycle # 7 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01007_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01007_fort.32"
+======================== Running FLUKA for cycle # 8 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01008_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01008_fort.32"
+======================== Running FLUKA for cycle # 9 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01009_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01009_fort.32"
+======================== Running FLUKA for cycle # 10 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01010_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/FluenzaNeu_FLUKA/simneu_01010_fort.32"
+End of FLUKA run

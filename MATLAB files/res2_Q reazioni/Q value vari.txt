@@ -1,0 +1,14 @@
+100Mo + p -> 99mTc + 2nn
+Q value: -7.7189 MeV
+Energia di soglia: 7.7967 MeV
+
+100Mo + p -> 97mNb + 4He
+Q value: 4.2739 MeV
+
+100Mo + p -> 97mNb + p + t
+Q value: -15.5399 MeV
+Energia di soglia: 15.6966 MeV
+
+100Mo + p -> 97mNb + n + 3He
+Q value: -16.3037 MeV
+Energia di soglia: 16.4681 MeV

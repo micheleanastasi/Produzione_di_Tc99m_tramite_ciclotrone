@@ -1,0 +1,46 @@
+ ==================================================================
+              SRIM version ---> SRIM-2013.00
+              Calc. date   ---> maggio 11, 2023 
+ ==================================================================
+
+ Disk File Name = SRIM Outputs\Hydrogen in Molybdenum.txt
+
+ Ion = Hydrogen [1] , Mass = 2,016 amu
+
+ Target Density =  1,0206E+01 g/cm3 = 6,1461E+22 atoms/cm3
+ ======= Target  Composition ========
+    Atom   Atom   Atomic    Mass     
+    Name   Numb   Percent   Percent  
+    ----   ----   -------   -------  
+     Mo     42    100,00    100,00   
+ ====================================
+ Bragg Correction = 0,00%
+ Stopping Units =  keV / micron   
+ See bottom of Table for other Stopping units 
+
+        Ion        dE/dx      dE/dx     Projected  Longitudinal   Lateral
+       Energy      Elec.      Nuclear     Range     Straggling   Straggling
+  --------------  ---------- ---------- ----------  ----------  ----------
+  10,00 MeV   3,773E+01  2,227E-02  163,87 um     8,12 um    11,14 um  
+  11,00 MeV   3,544E+01  2,050E-02  190,97 um     9,32 um    12,81 um  
+  12,00 MeV   3,344E+01  1,900E-02  219,77 um    10,53 um    14,56 um  
+  13,00 MeV   3,169E+01  1,771E-02  250,22 um    11,76 um    16,40 um  
+  14,00 MeV   3,014E+01  1,660E-02  282,31 um    13,00 um    18,32 um  
+  15,00 MeV   2,875E+01  1,563E-02  316,00 um    14,26 um    20,31 um  
+  16,00 MeV   2,750E+01  1,477E-02  351,27 um    15,54 um    22,39 um  
+  17,00 MeV   2,637E+01  1,400E-02  388,10 um    16,85 um    24,55 um  
+  18,00 MeV   2,534E+01  1,331E-02  426,47 um    18,17 um    26,78 um  
+  20,00 MeV   2,354E+01  1,213E-02  507,71 um    22,40 um    31,48 um  
+-----------------------------------------------------------
+ Multiply Stopping by        for Stopping Units
+ -------------------        ------------------
+  1,0000E-01                 eV / Angstrom 
+  1,0000E+00                keV / micron   
+  1,0000E+00                MeV / mm       
+  9,7985E-04                keV / (ug/cm2) 
+  9,7985E-04                MeV / (mg/cm2) 
+  9,7985E-01                keV / (mg/cm2) 
+  1,6271E-01                 eV / (1E15 atoms/cm2)
+  8,3798E-02                L.S.S. reduced units
+ ==================================================================
+ (C) 1984,1989,1992,1998,2008 by J.P. Biersack and J.F. Ziegler

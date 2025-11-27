@@ -1,0 +1,1984 @@
+1 *====================================================================*
+  *                                                                    *
+  *          FFFFF  L      U   U  K   K   AAA             4            *
+  *          F      L      U   U  K  K   A   A          4 4            *
+  *          F      L      U   U  K K    A   A         4  4            *
+  *          FFFF   L      U   U  KK     AAAAA  ===   4   4            *
+  *          F      L      U   U  K K    A   A  ===  4444444           *
+  *          F      L      U   U  K  K   A   A            4            *
+  *          F      LLLLL   UUU   K   K  A   A            4            *
+  *                                                                    *
+  *                       http://fluka.cern                            *
+  *                                                                    *
+  *               Copyright (C) CERN 2020 and after                    *
+  *               Copyright (C) CERN & INFN  2003-2019                 *
+  *                       All Rights Reserved.                         *
+  *                                                                    *
+  *====================================================================*
+
+1  *********************************************************************
+
+   FLUKA Version 4-3.1        by CERN   DATE:  4/28/23    TIME:  9:30:55
+
+   MD5SUM      : b759aa73cc4128f41c709f8c06aaf9e3
+   SHA256      : 421fe4a9f6bccf7e2129832303a093dfe708226b
+   COMMIT DATE : 2022-12-15 15:20:19 +0000               
+   DPMSHA      : -b5a3e231ac3d144a512407fa80e900e30287cf3
+
+   *********************************************************************
+ 
+ Successfully allocated   680000000 bytes of memory
+ 
+
+ ***** Next control card *****   TITLE      0.000       0.000       0.000       0.000       0.000       0.000                
+
+
+
+     simNeutroni                                                                     
+
+
+ *----------------   Set the defaults for precision simulations                                        ----------------*
+
+ ***** Next control card *****   DEFAULTS   0.000       0.000       0.000       0.000       0.000       0.000      PRECISIO  
+
+ *----------------   Define the beam position                                                          ----------------*
+ *----------------   Isotopes, material and compound definition                                        ----------------*
+ *----------------   COMPOUND         1.0    MO_100         0     MO_98         0     MO_97MOLYB       ----------------*
+ *----------------   ***************************************************************************       ----------------*
+ *----------------   Requests simulation of radioactive decays and sets the corresponding              ----------------*
+ *----------------   biasing and transport conditions                                                  ----------------*
+ *----------------   Define an irradiation profile for radioactive decay calculations                  ----------------*
+ *----------------   Defines decay times for radioactive product scoring                               ----------------*
+ *----------------   *************************************************************************         ----------------*
+ *----------------   Neutron fluence entering - Dim sfera R=0.5 cm                                     ----------------*
+ *----------------   Neutron fluence entering - Dim sfera R=0.5 cm                                     ----------------*
+ *----------------   **********************************************************************            ----------------*
+ *----------------   Neutron fluence after 0.1 sec                                                     ----------------*
+ *----------------   USRBDX            99   NEUTRON       -51      VOID   VD_sph13.14159265Neu1_01     ----------------*
+ *----------------   USRBDX          0.02     1E-12      2000                            20 &          ----------------*
+ *----------------   DCYSCORE           1                       Neu1_01                    USRBDX      ----------------*
+ *----------------   Neutron fluence after 0.1 sec                                                     ----------------*
+ *----------------   USRBDX            99   NEUTRON       -52      VOID   VD_sph23.14159265Neu2_01     ----------------*
+ *----------------   USRBDX          0.02     1E-12      2000                            20 &          ----------------*
+ *----------------   DCYSCORE           1                       Neu2_01                    USRBDX      ----------------*
+ *----------------   **********************************************************************            ----------------*
+ *----------------   Neutron fluence after 1200 sec                                                    ----------------*
+ *----------------   USRBDX            99   NEUTRON       -53      VOID   VD_sph13.14159265Neu1_600    ----------------*
+ *----------------   USRBDX          0.02     1E-12      2000                            20 &          ----------------*
+ *----------------   DCYSCORE           2                      Neu1_600                    USRBDX      ----------------*
+ *----------------   Neutron fluence after 1200 sec                                                    ----------------*
+ *----------------   USRBDX            99   NEUTRON       -54      VOID   VD_sph23.14159265Neu2_600    ----------------*
+ *----------------   USRBDX          0.02     1E-12      2000                            20 &          ----------------*
+ *----------------   DCYSCORE           2                      Neu2_600                    USRBDX      ----------------*
+ *----------------   ************************************************************************          ----------------*
+ *----------------   Set the random number seed                                                        ----------------*
+ *----------------   Set the number of primary histories to be simulated in the run                    ----------------*
+
+ ***** Next control card *****   PHYSICS    1.000       0.000       0.000       0.000       0.000       0.000      COALESCE  
+
+
+ **** Density scaling factors start at location        1 and end at     4000 (I*4 addr.) ****
+
+ ***** Next control card *****   PHYSICS    3.000       0.000       0.000       0.000       0.000       0.000      EVAPORAT  
+
+
+ ***** Next control card *****   BEAM     -1.9100E-02   0.000       38.50      0.2000       0.000      -1.000      PROTON    
+
+
+ ***** Next control card *****   BEAMPOS    0.000       0.000      -40.00       0.000       0.000       0.000                
+
+
+ ***** Next control card *****   GEOBEGIN   0.000       0.000       0.000       0.000       0.000       0.000      COMBNAME  
+
+1
+
+                                                                      
+
+                    IVLFLG= 0          IDBG = 0
+
+
+
+                                                  Body data
+ *
+ *---------------   Black body                                                                        ---------------*
+ *
+ *
+ *---------------   Cylindrical target                                                                ---------------*
+ *
+  SPH blkbody          1  0.00000000D+00  0.00000000D+00  0.00000000D+00  0.10000000D+03  0.00000000D+00  0.00000000D+00         5
+  RCC target           2  0.00000000D+00  0.00000000D+00  0.00000000D+00  0.00000000D+00  0.00000000D+00  0.58900000D-01        15
+                          0.75000000D+00
+  SPH sph_1            3  0.50000000D+01  0.00000000D+00  0.00000000D+00  0.50000000D+00  0.00000000D+00  0.00000000D+00        26
+  SPH sph_2            4  0.00000000D+00  0.00000000D+00  0.50000000D+01  0.50000000D+00  0.00000000D+00  0.00000000D+00        36
+  END                  5  0.00000000D+00  0.00000000D+00  0.00000000D+00  0.00000000D+00  0.00000000D+00  0.00000000D+00        46
+ Number of bodies         4
+ Length of FPD-Array     51
+
+  Accuracy parameter:  3.80E-07 suggested:  3.80E-07
+
+  Detected max. geometry dimension:   5.5     cm
+
+
+                                                  Input region data
+ *
+ *---------------   Black hole                                                                        ---------------*
+ *
+BLKBODY       5 -        blkbody                                                                                                    
+ *
+ *---------------   Void around                                                                       ---------------*
+ *
+VOID          5 +        blkbody  -        target   -        sph_1    -                                                             
+sph_2                                                                                                                               
+ *
+ *---------------   Target                                                                            ---------------*
+ *
+TARGET        5 +        target                                                                                                     
+VD_sph1       5 +        sph_1                                                                                                      
+VD_sph2       5 +        sph_2                                                                                                      
+  END                                                                                                                               
+ Number of input regions       5
+ Number of  code zones         5
+ Length of integer array     120
+
+
+ CODE ZONE    INPUT REGION   ZONE DATA LOC.    NO. OF BODIES    REGION NO.
+      1            1              33                 1               1
+      2            2              38                 4               2
+      3            3              55                 1               3
+      4            4              60                 1               4
+      5            5              65                 1               5
+
+
+    I    IR1(I)    IR2(I)
+    1       1         1
+    2       2         2
+    3       3         3
+    4       4         4
+    5       5         5
+
+
+ Interpreted body echo 
+
+
+ Body n.        1  SPH  blkbody    Rot.     0
+          0.000000              0.000000              0.000000              100.0000    
+ Body n.        2  RCC  target     Rot.     0
+          0.000000              0.000000              0.000000              0.000000              0.000000             0.5890000E-01
+         0.7500000    
+ Body n.        3  SPH  sph_1      Rot.     0
+          5.000000              0.000000              0.000000             0.5000000    
+ Body n.        4  SPH  sph_2      Rot.     0
+          0.000000              0.000000              5.000000             0.5000000    
+
+
+ Interpreted region echo 
+
+
+ Region n.        1 BLKBODY 
+                 -1
+ Region n.        2 VOID    
+                  1       -2       -3       -4
+ Region n.        3 TARGET  
+                  2
+ Region n.        4 VD_sph1 
+                  3
+ Region n.        5 VD_sph2 
+                  4
+
+ All region volumes set to 1
+
+ 
+
+           Volumes (cm**3)
+1
+    Reg.       1           2           3           4           5
+ Volume   1.000D+00   1.000D+00   1.000D+00   1.000D+00   1.000D+00
+0NGEOM=      4002,   NGLAST=      4314
+
+ **** Stars/Energy accumulation arrays start at location     4317 and end at     4356 (I*4 addr.) ****
+
+ **** Minimum step size array start at location     4359 and end at     4372 (I*4 addr.) ****
+
+ **** Maximum step size array start at location     4375 and end at     4388 (I*4 addr.) ****
+GEOEND                                                                          
+
+
+ Total time used for geometry initialization:   0.00     s
+
+
+
+ ***** Next control card *****   MATERIAL   42.00       0.000       10.22       0.000       0.000       100.0      MO_100    
+
+
+ ***** Next control card *****   MATERIAL   42.00       0.000       10.22       0.000       0.000       98.00      MO_98     
+
+
+ ***** Next control card *****   MATERIAL   42.00       0.000       10.22       0.000       0.000       97.00      MO_97     
+
+
+ ***** Next control card *****   MATERIAL   42.00       0.000       10.22       0.000       0.000       96.00      MO_96     
+
+
+ ***** Next control card *****   MATERIAL   42.00       0.000       10.22       0.000       0.000       95.00      MO_95     
+
+
+ ***** Next control card *****   MATERIAL   42.00       0.000       10.22       0.000       0.000       94.00      MO_94     
+
+
+ ***** Next control card *****   MATERIAL   42.00       0.000       10.22       0.000       0.000       92.00      MO_92     
+
+
+ ***** Next control card *****   MATERIAL   0.000       0.000       10.22       0.000       0.000       0.000      MOLYB     
+
+
+ ***** Next control card *****   COMPOUND  0.9986       26.00      1.1500E-03   27.00      5.0000E-04   28.00      MOLYB     
+
+
+ ***** Next control card *****   COMPOUND  5.0000E-04   29.00      5.0000E-04   30.00      5.0000E-04   31.00      MOLYB     
+
+
+ ***** Next control card *****   COMPOUND  5.0000E-04   32.00       0.000       0.000       0.000       0.000      MOLYB     
+
+
+ ***** Next control card *****   RADDECAY   1.000       1.000       0.000       0.000       0.000       0.000                
+
+
+ ***** Next control card *****   RANDOMIZ   0.000      9.5123E+07   0.000       0.000       0.000       0.000                
+
+ RM64 INITIALIZED:       23445       951   414231376       192
+
+ ***** Next control card *****   ASSIGNMA   1.000       1.000       0.000       0.000       0.000       0.000                
+
+
+ ***** Next control card *****   ASSIGNMA   2.000       2.000       0.000       0.000       0.000       0.000                
+
+
+ ***** Next control card *****   ASSIGNMA   33.00       3.000       0.000       0.000       0.000       0.000                
+
+
+ ***** Next control card *****   ASSIGNMA   2.000       4.000       0.000       0.000       0.000       0.000                
+
+
+ ***** Next control card *****   ASSIGNMA   2.000       5.000       0.000       0.000       0.000       0.000                
+
+
+ ***** Next control card *****   LOW-MAT    26.00       42.00       100.0       296.0       0.000       0.000      100-MO    
+
+
+ ***** Next control card *****   LOW-MAT    27.00       42.00       98.00       296.0       0.000       0.000      98-MO     
+
+
+ ***** Next control card *****   LOW-MAT    28.00       42.00       97.00       296.0       0.000       0.000      97-MO     
+
+
+ ***** Next control card *****   LOW-MAT    29.00       42.00       96.00       296.0       0.000       0.000      96-MO     
+
+
+ ***** Next control card *****   LOW-MAT    30.00       42.00       95.00       296.0       0.000       0.000      95-MO     
+
+
+ ***** Next control card *****   LOW-MAT    31.00       42.00       94.00       296.0       0.000       0.000      94-MO     
+
+
+ ***** Next control card *****   LOW-MAT    32.00       42.00       92.00       296.0       0.000       0.000      92-MO     
+
+
+ ***** Next control card *****   IRRPROFI   3600.      3.1208E+14   0.000       0.000       0.000       0.000                
+
+
+ ***** Next control card *****   DCYTIMES  0.1000       600.0       0.000       0.000       0.000       0.000                
+
+
+ ***** Next control card *****   USRBDX     99.00       8.000      -31.00       2.000       4.000       3.142      Neu1_out  
+
+
+ ***** Next control card *****   USRBDX    2.0000E-02  1.0000E-12   2000.       0.000       0.000       20.00       &        
+
+
+ ***** Next control card *****   USRBDX     99.00       8.000      -32.00       2.000       5.000       3.142      Neu2_out  
+
+
+ ***** Next control card *****   USRBDX    2.0000E-02  1.0000E-12   2000.       0.000       0.000       20.00       &        
+
+
+ ***** Next control card *****   START     5.0000E+08   0.000       0.000       0.000       0.000       0.000                
+
+
+
+ Total time used for input reading:  2.016E-02 s
+
+
+
+ === Magnetic fields ===
+
+ === Magnetic field region assignments ===
+
+  **** Power exponent for grey particle correlations set at  -13.0000000     ****
+
+  *** Reading evaporation and nuclear data from unit: 14
+
+**** Nuclear data file for Fluka v4 ****
+
+ File Version:_   43.0
+
+  *** Evaporation: using NNDC (1996) data ***
+
+ Starting location in blank common of LVL data:    4390
+ Last location in blank common of LVL data:     9634645
+
+ Starting location in blank common of  CE   data: 9634646
+ Last location in blank common of  CE   data:     9685405
+
+ Starting location in blank common of alpha data: 9685406
+ Last location in blank common of alpha data:     9688165
+
+ Starting location in blank common of gamma data: 9688166
+ Last location in blank common of gamma data:     9819099
+
+ Starting location in blank common of beta data: 9819100
+ Last location in blank common of beta data:     9861387
+
+ Starting location in blank common of GDR data: 9861388
+ Last location in blank common of GDR data:     9916442
+
+ Starting location in blank common of (g,x) data: 9916443
+ Last location in blank common of (g,x) data:    10219363
+
+  **** RIPL2/Ign. self-cons. T=0 N,Z-dep. level density used ****
+  ****      RIPL-2 / Ignyatuk level density en. dep. used    ****
+  **** with Moller, Nix self-cons set of parameters for T=oo ****
+  ****       Original Gilbert/Cameron pairing energy used    ****
+
+
+  **** Maximum Fermi momentum  :   0.268371314      GeV/c ****
+
+  **** Maximum Fermi energy    :    3.76013778E-02  GeV   ****
+
+  **** Average Fermi energy    :    2.26768460E-02  GeV   ****
+
+  **** Average binding energy  :    7.68006314E-03  GeV   ****
+
+  **** Nuclear well depth      :    4.52814400E-02  GeV   ****
+
+  **** Excess  mass  for 11-B  :    8.66803993E-03  GeV   ****
+
+  **** Cameron E. m. for 11-B  :    7.92484451E-03  GeV   ****
+
+  **** Cam.El. E. m. for 11-B  :    8.51833168E-03  GeV   ****
+
+  **** My.&Sw. E. m. for 11-B  :    8.87639914E-03  GeV   ****
+
+  **** Atomic  mass  for 11-B  :    10.2551060      GeV   ****
+
+  **** Nuclear mass  for 11-B  :    10.2525511      GeV   ****
+
+  **** Excess  mass  for 12-C  :    0.00000000      GeV   ****
+
+  **** Cameron E. m. for 12-C  :    1.51353085E-03  GeV   ****
+
+  **** Cam.El. E. m. for 12-C  :    1.63579860E-03  GeV   ****
+
+  **** My.&Sw. E. m. for 12-C  :   -3.83192004E-04  GeV   ****
+
+  **** Atomic  mass  for 12-C  :    11.1779318      GeV   ****
+
+  **** Nuclear mass  for 12-C  :    11.1748667      GeV   ****
+
+  **** Excess  mass  for 13-C  :    3.12499981E-03  GeV   ****
+
+  **** Cameron E. m. for 13-C  :    2.87424121E-03  GeV   ****
+
+  **** Cam.El. E. m. for 13-C  :    3.48056527E-03  GeV   ****
+
+  **** My.&Sw. E. m. for 13-C  :    3.55792139E-03  GeV   ****
+
+  **** Atomic  mass  for 13-C  :    12.1125507      GeV   ****
+
+  **** Nuclear mass  for 13-C  :    12.1094866      GeV   ****
+
+  **** Excess  mass  for 14-N  :    2.86339992E-03  GeV   ****
+
+  **** Cameron E. m. for 14-N  :    3.37313744E-03  GeV   ****
+
+  **** Cam.El. E. m. for 14-N  :    3.69752850E-03  GeV   ****
+
+  **** My.&Sw. E. m. for 14-N  :    2.86558736E-03  GeV   ****
+
+  **** Atomic  mass  for 14-N  :    13.0437841      GeV   ****
+
+  **** Nuclear mass  for 14-N  :    13.0402088      GeV   ****
+
+  **** Excess  mass  for 15-O  :    2.85555003E-03  GeV   ****
+
+  **** Cameron E. m. for 15-O  :    2.40658456E-03  GeV   ****
+
+  **** Cam.El. E. m. for 15-O  :    2.59008165E-03  GeV   ****
+
+  **** My.&Sw. E. m. for 15-O  :    3.32844956E-03  GeV   ****
+
+  **** Atomic  mass  for 15-O  :    13.9752703      GeV   ****
+
+  **** Nuclear mass  for 15-O  :    13.9711847      GeV   ****
+
+  **** Excess  mass  for 16-O  :   -4.73699998E-03  GeV   ****
+
+  **** Cameron E. m. for 16-O  :   -3.31055629E-03  GeV   ****
+
+  **** Cam.El. E. m. for 16-O  :   -3.19385715E-03  GeV   ****
+
+  **** My.&Sw. E. m. for 16-O  :   -4.83116647E-03  GeV   ****
+
+  **** Atomic  mass  for 16-O  :    14.8991718      GeV   ****
+
+  **** Nuclear mass  for 16-O  :    14.8950863      GeV   ****
+
+  **** Excess  mass  for 27-Al :   -1.71969198E-02  GeV   ****
+
+  **** Cameron E. m. for 27-Al :   -1.86259765E-02  GeV   ****
+
+  **** Cam.El. E. m. for 27-Al :   -1.71393938E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 27-Al :   -1.71456710E-02  GeV   ****
+
+  **** Atomic  mass  for 27-Al :    25.1331501      GeV   ****
+
+  **** Nuclear mass  for 27-Al :    25.1265125      GeV   ****
+
+  **** Excess  mass  for 28-Si :   -2.14928202E-02  GeV   ****
+
+  **** Cameron E. m. for 28-Si :   -2.20552329E-02  GeV   ****
+
+  **** Cam.El. E. m. for 28-Si :   -2.02140864E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 28-Si :   -2.15357170E-02  GeV   ****
+
+  **** Atomic  mass  for 28-Si :    26.0603485      GeV   ****
+
+  **** Nuclear mass  for 28-Si :    26.0532017      GeV   ****
+
+  **** Excess  mass  for 40-Ca :   -3.48461308E-02  GeV   ****
+
+  **** Cameron E. m. for 40-Ca :   -3.57677415E-02  GeV   ****
+
+  **** Cam.El. E. m. for 40-Ca :   -3.36877368E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 40-Ca :   -3.49160209E-02  GeV   ****
+
+  **** Atomic  mass  for 40-Ca :    37.2249260      GeV   ****
+
+  **** Nuclear mass  for 40-Ca :    37.2147255      GeV   ****
+
+  **** Excess  mass  for 55-Fe :   -5.74751087E-02  GeV   ****
+
+  **** Cameron E. m. for 55-Fe :   -5.95041849E-02  GeV   ****
+
+  **** Cam.El. E. m. for 55-Fe :   -5.80860823E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 55-Fe :   -5.75032495E-02  GeV   ****
+
+  **** Atomic  mass  for 55-Fe :    51.1747131      GeV   ****
+
+  **** Nuclear mass  for 55-Fe :    51.1614609      GeV   ****
+
+  **** Excess  mass  for 56-Fe :   -6.06013089E-02  GeV   ****
+
+  **** Cameron E. m. for 56-Fe :   -6.23576604E-02  GeV   ****
+
+  **** Cam.El. E. m. for 56-Fe :   -6.08849637E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 56-Fe :   -6.04862086E-02  GeV   ****
+
+  **** Atomic  mass  for 56-Fe :    52.1030807      GeV   ****
+
+  **** Nuclear mass  for 56-Fe :    52.0898285      GeV   ****
+
+  **** Excess  mass  for 107-Ag:   -8.84052590E-02  GeV   ****
+
+  **** Cameron E. m. for 107-Ag:   -8.91378522E-02  GeV   ****
+
+  **** Cam.El. E. m. for 107-Ag:   -8.86852369E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 107-Ag:   -8.82571116E-02  GeV   ****
+
+  **** Atomic  mass  for 107-Ag:    99.5814896      GeV   ****
+
+  **** Nuclear mass  for 107-Ag:    99.5576096      GeV   ****
+
+  **** Excess  mass  for 132-Xe:   -8.92794058E-02  GeV   ****
+
+  **** Cameron E. m. for 132-Xe:   -8.98088515E-02  GeV   ****
+
+  **** Cam.El. E. m. for 132-Xe:   -8.92864987E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 132-Xe:   -8.94251093E-02  GeV   ****
+
+  **** Atomic  mass  for 132-Xe:    122.867973      GeV   ****
+
+  **** Nuclear mass  for 132-Xe:    122.840576      GeV   ****
+
+  **** Excess  mass  for 181-Ta:   -4.84412275E-02  GeV   ****
+
+  **** Cameron E. m. for 181-Ta:   -4.81105074E-02  GeV   ****
+
+  **** Cam.El. E. m. for 181-Ta:   -4.78131436E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 181-Ta:   -4.82191741E-02  GeV   ****
+
+  **** Atomic  mass  for 181-Ta:    168.552032      GeV   ****
+
+  **** Nuclear mass  for 181-Ta:    168.515137      GeV   ****
+
+  **** Excess  mass  for 208-Pb:   -2.17638295E-02  GeV   ****
+
+  **** Cameron E. m. for 208-Pb:   -1.84126478E-02  GeV   ****
+
+  **** Cam.El. E. m. for 208-Pb:   -2.03331560E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 208-Pb:   -2.09293775E-02  GeV   ****
+
+  **** Atomic  mass  for 208-Pb:    193.729050      GeV   ****
+
+  **** Nuclear mass  for 208-Pb:    193.687683      GeV   ****
+
+  **** Excess  mass  for 209-Bi:   -1.82725303E-02  GeV   ****
+
+  **** Cameron E. m. for 209-Bi:   -1.47107309E-02  GeV   ****
+
+  **** Cam.El. E. m. for 209-Bi:   -1.71704441E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 209-Bi:   -1.77380107E-02  GeV   ****
+
+  **** Atomic  mass  for 209-Bi:    194.664047      GeV   ****
+
+  **** Nuclear mass  for 209-Bi:    193.687195      GeV   ****
+
+  **** Excess  mass  for 235-U :    4.09132205E-02  GeV   ****
+
+  **** Cameron E. m. for 235-U :    4.64000776E-02  GeV   ****
+
+  **** Cam.El. E. m. for 235-U :    4.20622788E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 235-U :    4.13222089E-02  GeV   ****
+
+  **** Atomic  mass  for 235-U :    218.942078      GeV   ****
+
+  **** Nuclear mass  for 235-U :    218.895767      GeV   ****
+
+  **** Excess  mass  for 238-U :    4.73045185E-02  GeV   ****
+
+  **** Cameron E. m. for 238-U :    5.24553321E-02  GeV   ****
+
+  **** Cam.El. E. m. for 238-U :    4.81762439E-02  GeV   ****
+
+  **** My.&Sw. E. m. for 238-U :    4.73943055E-02  GeV   ****
+
+  **** Atomic  mass  for 238-U :    221.742950      GeV   ****
+
+  **** Nuclear mass  for 238-U :    221.696655      GeV   ****
+
+  **** Evaporation from residual nucleus activated **** 
+  **** Deexcitation gamma   production   activated **** 
+  **** Evaporated "heavies" transport    activated **** 
+  **** High Energy fission   requested & activated **** 
+  **** Fermi Break Up        requested & activated **** 
+  *** Heavy fragment evaporation activated ***
+
+ Heavy fragmentation requested and activated.  Total number of evaporation states considered:    521
+ A and Z of the last one:   24  13
+
+
+
+ ****  Neutrino generators initialized  F  T  T ****
+
+
+
+ *** Neutrino xsec file header:       Neutrino Xsec file from nundis + nunres ***
+ *** Neutrino xsec file generated on:  DATE:  6/ 1/15,  TIME: 12:53:31 ***
+
+    Minimum kinetic energy for BME   :   1.0000E-03 (GeV/n)
+    Overall minimum kinetic energy for ion nuclear interactions:   1.0000E-03 (GeV/n)
+
+
+ Rayleigh option requested for medium number    1
+
+  **** Fluorescence data successfully retrieved from unit          13  ****
+
+ **** Subroutine Mulmix: medium n.   33 ****
+
+ Number of elements =   7,  Density=    10.2200     (g/cm**3)
+0  I         Z              Pa            F_i            Rho_i 
+ Index    Atomic         Atomic       Proportion     Proportion 
+          Number         Weight        by Number      by weight 
+
+    1    42.0000        99.9075       0.996358        10.1843    
+    2    42.0000        97.9054       1.147418E-03   1.149338E-02
+    3    42.0000        96.9060       4.988775E-04   4.946113E-03
+    4    42.0000        95.9047       4.988775E-04   4.895004E-03
+    5    42.0000        94.9058       4.988775E-04   4.844023E-03
+    6    42.0000        93.9051       4.988775E-04   4.792944E-03
+    7    42.0000        91.9068       4.988775E-04   4.690951E-03
+
+ ZTILDE,AE1O3,BLCCRA=   4.20000E+01   4.64016E+00   3.13744E-01
+
+ **** Warning!!! Least square fit for blccre failed to keep max. rel. Blcce err. below 1% ****
+ **** Max. error is  23.9 %, for beta2 = 0.00557 ****
+
+
+ ZTILDE,AE1O3,BLCCRE=   4.10000E+01   4.64016E+00   3.13744E-01
+ BLCC,XCC,TFFLU0,XR0FLU=   7.62029E+04   5.32159E-03   8.78599E-05   8.63967E-05
+ BLCCE,XCCE,TFEMF0,XR0EMF=   7.80173E+04   5.38457E+00   2.56402E-04   1.82902E-01
+ Particle n.:   -6  Ecutm (prim. & sec.) =   3.727     GeV   3.727     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   -5  Ecutm (prim. & sec.) =   2.808     GeV   2.808     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   -4  Ecutm (prim. & sec.) =   2.809     GeV   2.809     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   -3  Ecutm (prim. & sec.) =   1.876     GeV   1.876     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:    1  Ecutm (prim. & sec.) =  0.9383     GeV  0.9383     GeV,    Hthnsz =  0.9384     GeV
+ Particle n.:    2  Ecutm (prim. & sec.) =  0.9383     GeV  0.9383     GeV,    Hthnsz =  0.9384     GeV
+ Particle n.:    3  Ecutm (prim. & sec.) =  5.3549E-04 GeV  5.3549E-04 GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:    4  Ecutm (prim. & sec.) =  5.3549E-04 GeV  5.3549E-04 GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   10  Ecutm (prim. & sec.) =  0.1057     GeV  0.1057     GeV,    Hthnsz =  0.1067     GeV
+ Particle n.:   11  Ecutm (prim. & sec.) =  0.1057     GeV  0.1057     GeV,    Hthnsz =  0.1067     GeV
+ Particle n.:   13  Ecutm (prim. & sec.) =  0.1396     GeV  0.1396     GeV,    Hthnsz =  0.1403     GeV
+ Particle n.:   14  Ecutm (prim. & sec.) =  0.1396     GeV  0.1396     GeV,    Hthnsz =  0.1403     GeV
+ Particle n.:   15  Ecutm (prim. & sec.) =  0.4937     GeV  0.4937     GeV,    Hthnsz =  0.4939     GeV
+ Particle n.:   16  Ecutm (prim. & sec.) =  0.4937     GeV  0.4937     GeV,    Hthnsz =  0.4939     GeV
+ Particle n.:   20  Ecutm (prim. & sec.) =   1.197     GeV   1.197     GeV,    Hthnsz =   1.198     GeV
+ Particle n.:   21  Ecutm (prim. & sec.) =   1.189     GeV   1.189     GeV,    Hthnsz =   1.189     GeV
+ Particle n.:   31  Ecutm (prim. & sec.) =   1.189     GeV   1.189     GeV,    Hthnsz =   1.189     GeV
+ Particle n.:   33  Ecutm (prim. & sec.) =   1.197     GeV   1.197     GeV,    Hthnsz =   1.198     GeV
+ Particle n.:   36  Ecutm (prim. & sec.) =   1.321     GeV   1.321     GeV,    Hthnsz =   1.321     GeV
+ Particle n.:   37  Ecutm (prim. & sec.) =   1.321     GeV   1.321     GeV,    Hthnsz =   1.321     GeV
+ Particle n.:   38  Ecutm (prim. & sec.) =   1.672     GeV   1.672     GeV,    Hthnsz =   1.672     GeV
+ Particle n.:   39  Ecutm (prim. & sec.) =   1.672     GeV   1.672     GeV,    Hthnsz =   1.672     GeV
+ Particle n.:   41  Ecutm (prim. & sec.) =   1.777     GeV   1.777     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   42  Ecutm (prim. & sec.) =   1.777     GeV   1.777     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   45  Ecutm (prim. & sec.) =   1.869     GeV   1.869     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   46  Ecutm (prim. & sec.) =   1.869     GeV   1.869     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   49  Ecutm (prim. & sec.) =   1.968     GeV   1.968     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   50  Ecutm (prim. & sec.) =   1.968     GeV   1.968     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   51  Ecutm (prim. & sec.) =   2.285     GeV   2.285     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   52  Ecutm (prim. & sec.) =   2.468     GeV   2.468     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   54  Ecutm (prim. & sec.) =   2.574     GeV   2.574     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   57  Ecutm (prim. & sec.) =   2.285     GeV   2.285     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   58  Ecutm (prim. & sec.) =   2.468     GeV   2.468     GeV,    Hthnsz =  1.0000E+30 GeV
+ Particle n.:   60  Ecutm (prim. & sec.) =   2.574     GeV   2.574     GeV,    Hthnsz =  1.0000E+30 GeV
+ **** Atomic electron contribution accounted via the Fano correction  ****
+ **** f_Fano = 7.944E+00, Z_Fano = 4.200E+01                          ****
+ **** Nuclear finite size effects requested and implemented ****
+
+ **** Isotope tabulation data start     at location 10219364 and end at 10230390 (I*4 addr.) ****
+
+ **** Non analog absorption factors start     at location 10230393 and end at 10230402 (I*4 addr.) ****
+
+ **** Biased downscattering factors start     at location 10230405 and end at 10230414 (I*4 addr.) ****
+
+ **** Non analog absorption group limits start at location10230415 and end at 10230419 (I*4 addr.) ****
+
+ **** Biased downscattering group limits start at location10230420 and end at 10230424 (I*4 addr.) ****
+
+ **** Cut-off group limits start        at location 10230425 and end at 10230429 (I*4 addr.) ****
+
+ **** Lower Weight Window  limits start at location 10230431 and end at 10230440 (I*4 addr.) ****
+1
+ ***** Neutron Xsec: group limits, average energies, velocities and momenta *****
+ ***** start at location 10230441, end at location 10232608 (I*4 addr.) *****
+
+
+ *****                     Neutron Xsec:                     ****
+ **** Group limits, average energies, velocities and momenta start at location 10230441, end at location 10232608 (I*4 addr.) *****
+
+
+ Group cross sections storage starts at  10279929
+ Last location used for group xsecs  11779028
+
+
+                    *** Values read from the cross section file ***
+    Panini independent Xsec                                                      
+
+ Number of primary groups           260
+ Number of primary downscatters     260
+ Number of primary upscatters        30
+ Number of secondary groups          42
+ Number of secondary downscatters    42
+ Number of neutron+gamma groups     302
+ Total xsec table length            335
+ Loc. of within group (g->g) xsec    34
+ Number of media read               285
+ Number of Leg. coefficients          6
+ Number of discrete angles            3
+1
+  *** Fluka low energy group transport threshold:  261
+      corresponding to an energy threshold of: 1.00001E-14 GeV
+1
+  *** Fluka to low en. xsec material correspondence: printed atomic densities are meaningless when used in a compound ***
+
+   Fluka medium     Name     Xsec medium  atomic density          Id. 1        Id. 2        Id. 3
+     number                   number     ( at/(cm barn) )
+
+         1        BLCKHOLE         0         0.0000E+00               0            0            0
+
+         2        VACUUM        1000         0.0000E+00               0            0            0
+
+        26        MO_100           7         0.0000E+00              42          100          296
+
+        27        MO_98            6         0.0000E+00              42           98          296
+
+        28        MO_97            5         0.0000E+00              42           97          296
+
+        29        MO_96            4         0.0000E+00              42           96          296
+
+        30        MO_95            3         0.0000E+00              42           95          296
+
+        31        MO_94            2         0.0000E+00              42           94          296
+
+        32        MO_92            1         0.0000E+00              42           92          296
+
+1
+
+ ========= Radioactive products and decays =========
+
+
+
+
+ Evolution of products/decays at definite times requested and implemented
+
+
+     1 irradiation intervals defined
+         #    Length (s)  Intensity (p/s)
+         1    3.60000E+03     3.12076E+14
+
+     3 decay (cooling) times defined
+         #    Length (s)
+         1    1.00000E-01
+
+         2    6.00000E+02
+
+         3    0.00000E+00
+
+ ***** decay matrices in blank common start at location  11779029 *****
+ ***** end at location  11828528 (I*4 addresses) *****
+
+     50 auxiliary decay matrices allocated
+
+
+
+ Flags for applying biasing to prompt and/or decay radiation:
+                        Hadr/muon         EM       Low en. Neut.
+                       Prompt/Decay  Prompt/Decay  Prompt/Decay 
+  Inter./decay length:    T    F        T    F        T    F
+  Leading Particle   :    T    F        T    F        T    F
+  Importance and WW  :    T    F        T    F        T    F
+
+
+
+  EM transport threshold multipliers:      prompt       decay
+                                           1.00E+00    1.00E+00
+
+  *** dp/dx tab. generated up to       4.44 GeV/c/n ***
+
+   *** Barkas Z^3 corrections accounted for ***
+
+   *** Bloch  Z^4 corrections accounted for ***
+
+   *** Mott Z - e corrections accounted for ***
+
+   *** Nuclear stopping power accounted for ***
+
+   **** Nuclear form factor 'a la Kelner' selected      ****
+   **** Standard Coulomb correction selected            ****
+   ****   for charged hadron and muon bremsstrahlung    ****
+
+
+
+ *****   dp/dx : material number  33 "MOLYB   "    *****
+
+   ***** Average excitation energy : 4.2400E+02 eV, weighted Z/A : 4.2045E-01                *****
+   ***** Sternheimer density effect parameters:                                              *****
+   ***** X0 =   0.2000, X1 =   3.0000, C =  -4.9197, A =   0.1822 m =   3.0000 D0 =   0.0000 *****
+
+   ***** Restricted energy loss tabulated in    253 intervals *****
+   ***** Delta ray production activated above  1.0000E-04 GeV *****
+
+   ***** dE/dx fluctuations activated for this medium, level  1 *****
+   *****     (up to  2I discrete levels, up to   2 K-edges)     *****
+
+   ***** Restricted pair production energy loss added         *****
+   ***** Exp. pair production activated above  0.0000E+00 GeV *****
+
+   ***** Restricted bremsstrahlung energy loss added          *****
+   ***** Exp. bremsstrahlung activated above   3.3333E-05 GeV *****
+
+ ***** dp/dx tabulations in blank common start at location  11828531 *****
+ ***** end at location  11861926 (I*4 addresses) *****
+
+  *** Range: P_max:   1.23008430      P_min   3.98107152E-03  ***
+
+ ***** Range tabulations in blank common start at location  11861929 *****
+ ***** end at location  11862036 (I*4 addresses) *****
+
+
+ *****  Sigtab : material number  26 "MO_100  "    *****
+
+ *****  Muon photonuclear interac. requested       *****
+
+ *****  Xsec tabulations in blank common start at location  11862039 *****
+ *****  end at location  11870994 (I*4 addresses) for this medium *****
+
+
+ *****  Sigtab : material number  27 "MO_98   "    *****
+
+ *****  Muon photonuclear interac. requested       *****
+
+ *****  Xsec tabulations in blank common start at location  11870995 *****
+ *****  end at location  11879950 (I*4 addresses) for this medium *****
+
+
+ *****  Sigtab : material number  28 "MO_97   "    *****
+
+ *****  Muon photonuclear interac. requested       *****
+
+ *****  Xsec tabulations in blank common start at location  11879951 *****
+ *****  end at location  11888906 (I*4 addresses) for this medium *****
+
+
+ *****  Sigtab : material number  29 "MO_96   "    *****
+
+ *****  Muon photonuclear interac. requested       *****
+
+ *****  Xsec tabulations in blank common start at location  11888907 *****
+ *****  end at location  11897862 (I*4 addresses) for this medium *****
+
+
+ *****  Sigtab : material number  30 "MO_95   "    *****
+
+ *****  Muon photonuclear interac. requested       *****
+
+ *****  Xsec tabulations in blank common start at location  11897863 *****
+ *****  end at location  11906818 (I*4 addresses) for this medium *****
+
+
+ *****  Sigtab : material number  31 "MO_94   "    *****
+
+ *****  Muon photonuclear interac. requested       *****
+
+ *****  Xsec tabulations in blank common start at location  11906819 *****
+ *****  end at location  11915774 (I*4 addresses) for this medium *****
+
+
+ *****  Sigtab : material number  32 "MO_92   "    *****
+
+ *****  Muon photonuclear interac. requested       *****
+
+ *****  Xsec tabulations in blank common start at location  11915775 *****
+ *****  end at location  11924730 (I*4 addresses) for this medium *****
+
+
+ *****  Sigtab : material number  33 "MOLYB   "    *****
+
+ *****  Muon photonuclear interac. requested       *****
+
+ *****  Xsec tabulations in blank common start at location  11924731 *****
+ *****  end at location  11933686 (I*4 addresses) for this medium *****
+
+
+ ***** Total,elastic,inelastic,pair,bremss. macroscopic cross sections tabulated in     70 intervals *****
+
+ *****  Xsec tabulations in blank common start at location  11862039 *****
+ *****  end at location  11933686 (I*4 addresses) *****
+
+ ***** Form Fact. tabulations in blank common start at location11933687 *****
+ ***** end at location11995058 (I*4 addresses) *****
+    Chem. sym. : Mo, Z = 42., A =    99.907, PZ =  9.96358E-01 , RHOZ =  1.01843E+01
+    Chem. sym. : Mo, Z = 42., A =    97.905, PZ =  1.14742E-03 , RHOZ =  1.14934E-02
+    Chem. sym. : Mo, Z = 42., A =    96.906, PZ =  4.98878E-04 , RHOZ =  4.94611E-03
+    Chem. sym. : Mo, Z = 42., A =    95.905, PZ =  4.98878E-04 , RHOZ =  4.89500E-03
+    Chem. sym. : Mo, Z = 42., A =    94.906, PZ =  4.98878E-04 , RHOZ =  4.84402E-03
+    Chem. sym. : Mo, Z = 42., A =    93.905, PZ =  4.98878E-04 , RHOZ =  4.79294E-03
+    Chem. sym. : Mo, Z = 42., A =    91.907, PZ =  4.98878E-04 , RHOZ =  4.69095E-03
+ Electron Xsecs for EMF medium #     1(MOLYB   ) tabulated in    369 intervals
+ Min kin. energy  1.000E-04 (GeV)Max kin. energy   4.44     (GeV)
+
+ ***** EMF   tabulations in blank common start at  location11998502 *****
+ ***** end at location12031814 (I*4 addresses) *****
+
+  **** Fluorescence X-ray production requested for Emf medium #           1  ****
+  **** Maximum K-edge energy   1.99650005E-02  MeV ****
+  **** Lowest energy bin above it #           0  ****
+1 Quantities/Biasing associated with each media: 
+
+
+
+ MOLYB                   
+      Rho =    10.2200     g/cm**3     Rlc=   0.998708     cm
+      Ae =   0.610999     MeV    Ue =    4437.01     MeV
+      Ap =   3.333333E-02 MeV    Up =    4436.50     MeV
+      dE/dx fluctuations activated for this medium, level  1
+      below the threshold for explicit secondary electron production
+     (up to  2I discrete levels, up to   2 K-edges)
+
+1 Correspondence of regions and EMF-FLUKA material numbers and names:
+
+       Region          EMF                     FLUKA
+
+          1 BLKBODY          0   VACUUM               1  BLCKHOLE
+          2 VOID             0   VACUUM               2  VACUUM  
+          3 TARGET           1   MOLYB               33  MOLYB   
+  Prompt:
+     Ecut =  6.1100E-01 MeV,    Pcut =  3.3333E-02 MeV
+     BIAS = F,   Ray. = T,   S(q,Z) = T,  Pz(q,Z) = T,  Acolin.= F
+  Delayed:
+     Ecut =  6.1100E-01 MeV,    Pcut =  3.3333E-02 MeV
+          4 VD_sph1          0   VACUUM               2  VACUUM  
+          5 VD_sph2          0   VACUUM               2  VACUUM  
+
+ Starting location in blank common of bdrx data:12033297
+ Last location in blank common of bdrx data:    12053699
+1
+  === Output before the actual run - Particle properties: ===
+
+
+
+  === Transportable Fluka particles: ===
+
+ Particle  Number     Mass     Mean Life  Charge Baryon Discard  Decay  PDG id
+                  (GeV/c**2)      (s)            number Flag(=1) Flag
+
+ 4-HELIUM    -6    3.7273803   1.000E+18      2      4      0      1      9999
+ 3-HELIUM    -5    2.8083922   1.000E+18      2      3      0      1      9999
+ TRITON      -4    2.8089218   1.000E+18      1      3      0      1      9999
+ DEUTERON    -3    1.8756134   1.000E+18      1      2      0      1      9999
+ HEAVYION    -2    0.0000000   1.000E+18      0      0      0      1      9999
+ OPTIPHOT    -1    0.0000000   1.000E+18      0      0      0      1      9999
+ RAY          0    0.0000000    0.00          0      0      0      1      9999
+ PROTON       1    0.9382723   1.000E+18      1      1      0      1      2212
+ APROTON      2    0.9382723   1.000E+18     -1     -1      0      1     -2212
+ ELECTRON     3    0.0005110   1.000E+18     -1      0      0      1        11
+ POSITRON     4    0.0005110   1.000E+18      1      0      0      1       -11
+ NEUTRIE      5    0.0000000   1.000E+18      0      0      1      1        12
+ ANEUTRIE     6    0.0000000   1.000E+18      0      0      1      1       -12
+ PHOTON       7    0.0000000   1.000E+18      0      0      0      1        22
+ NEUTRON      8    0.9395656    889.          0      1      0      1      2112
+ ANEUTRON     9    0.9395656    889.          0     -1      0      1     -2112
+ MUON+       10    0.1056584   2.197E-06      1      0      0      1       -13
+ MUON-       11    0.1056584   2.197E-06     -1      0      0      1        13
+ KAONLONG    12    0.4976710   5.170E-08      0      0      0      1       130
+ PION+       13    0.1395699   2.603E-08      1      0      0      1       211
+ PION-       14    0.1395699   2.603E-08     -1      0      0      1      -211
+ KAON+       15    0.4936460   1.237E-08      1      0      0      1       321
+ KAON-       16    0.4936460   1.237E-08     -1      0      0      1      -321
+ LAMBDA      17    1.1156300   2.632E-10      0      1      0      1      3122
+ ALAMBDA     18    1.1156300   2.632E-10      0     -1      0      1     -3122
+ KAONSHRT    19    0.4976710   8.922E-11      0      0      0      1       310
+ SIGMA-      20    1.1974300   1.479E-10     -1      1      0      1      3112
+ SIGMA+      21    1.1893700   7.990E-11      1      1      0      1      3222
+ SIGMAZER    22    1.1925500   7.400E-20      0      1      0      1      3212
+ PIZERO      23    0.1349764   8.400E-17      0      0      0      1       111
+ KAONZERO    24    0.4976710    0.00          0      0      0      1       311
+ AKAONZER    25    0.4976710    0.00          0      0      0      1      -311
+ RESERVED    26    0.1349764   8.400E-17      0      0      0      1         0
+ NEUTRIM     27    0.0000000   1.000E+18      0      0      1      1        14
+ ANEUTRIM    28    0.0000000   1.000E+18      0      0      1      1       -14
+ RESERVED    29    0.5474500    0.00          0      0      0      1         0
+ RESERVED    30    0.0000000    0.00          0      0      0      1         0
+ ASIGMA-     31    1.1893700   7.990E-11     -1     -1      0      1     -3222
+ ASIGMAZE    32    1.1925500   7.400E-20      0     -1      0      1     -3212
+ ASIGMA+     33    1.1974300   1.479E-10      1     -1      0      1     -3112
+ XSIZERO     34    1.3149000   2.900E-10      0      1      0      1      3322
+ AXSIZERO    35    1.3149000   2.900E-10      0     -1      0      1     -3322
+ XSI-        36    1.3213200   1.639E-10     -1      1      0      1      3312
+ AXSI+       37    1.3213200   1.639E-10      1     -1      0      1     -3312
+ OMEGA-      38    1.6724300   8.220E-11     -1      1      0      1      3334
+ AOMEGA+     39    1.6724300   8.220E-11      1     -1      0      1     -3334
+ WWLOWNEU    40    0.9395656    889.          0      1      0      1      2112
+ TAU+        41    1.7770000   2.910E-13      1      0      0      1       -15
+ TAU-        42    1.7770000   2.910E-13     -1      0      0      1        15
+ NEUTRIT     43    0.0000000   1.000E+18      0      0      1      1        16
+ ANEUTRIT    44    0.0000000   1.000E+18      0      0      1      1       -16
+ D+          45    1.8693000   1.057E-12      1      0      0      1       411
+ D-          46    1.8693000   1.057E-12     -1      0      0      1      -411
+ D0          47    1.8646000   4.150E-13      0      0      0      1       421
+ D0BAR       48    1.8646000   4.150E-13      0      0      0      1      -421
+ DS+         49    1.9683000   4.900E-13      1      0      0      1       431
+ DS-         50    1.9683000   4.900E-13     -1      0      0      1      -431
+ LAMBDAC+    51    2.2849000   2.060E-13      1      1      0      1      4122
+ XSIC+       52    2.4679000   4.420E-13      1      1      0      1      4232
+ XSIC0       53    2.4710000   1.120E-13      0      1      0      1      4132
+ XSIPC+      54    2.5741000   5.000E-20      1      1      0      1      4322
+ XSIPC0      55    2.5788000   5.000E-20      0      1      0      1      4312
+ OMEGAC0     56    2.7300000   6.400E-14      0      1      0      1      4332
+ ALAMBDC-    57    2.2849000   2.060E-13     -1     -1      0      1     -4122
+ AXSIC-      58    2.4679000   4.420E-13     -1     -1      0      1     -4232
+ AXSIC0      59    2.4710000   1.120E-13      0     -1      0      1     -4132
+ AXSIPC-     60    2.5741000   5.000E-20     -1     -1      0      1     -4322
+ AXSIPC0     61    2.5788000   5.000E-20      0     -1      0      1     -4312
+ AOMEGAC0    62    2.7300000   6.400E-14      0     -1      0      1     -4332
+ RESERVED    63    0.0000000    0.00          0      0      0      1      9999
+ RESERVED    64    0.0000000    0.00          0      0      0      1      9999
+1
+  === Generalised particles (201-233)  (for scoring): === 
+
+ Generalised particle   Number
+
+ ALL-PART                 201
+ ALL-CHAR                 202
+ ALL-NEUT                 203
+ ALL-NEGA                 204
+ ALL-POSI                 205
+ NUCLEONS                 206
+ NUC&PI+-                 207
+ ENERGY                   208
+ PIONS+-                  209
+ BEAMPART                 210
+ EM-ENRGY                 211
+ MUONS                    212
+ E+&E-                    213
+ AP&AN                    214
+ KAONS                    215
+ STRANGE                  216
+ KAONS+-                  217
+ HAD-CHAR                 218
+ FISSIONS                 219
+ HE-FISS                  220
+ LE-FISS                  221
+ NEU-BALA                 222
+ HAD-NEUT                 223
+ KAONS0                   224
+ C-MESONS                 225
+ C-(A)BAR                 226
+ CHARMED                  227
+ DOSE                     228
+ UNB-ENER                 229
+ UNB-EMEN                 230
+ X-MOMENT                 231
+ Y-MOMENT                 232
+ Z-MOMENT                 233
+ ACTIVITY                 234
+ ACTOMASS                 235
+ SI1MEVNE                 236
+ HADGT20M                 237
+ NIEL-DEP                 238
+ DPA-SCO                  239
+ DOSE-EQ                  240
+ DOSE-EM                  241
+ NET-CHRG                 242
+ DOSEQLET                 243
+ RES-NIEL                 244
+ DPA-NRT                  245
+ LOWENNEU                 246
+ NTLOWENE                 247
+ ALL-IONS                 248
+ HEHAD-EQ                 249
+ THNEU-EQ                 250
+ RES-NUCL                 251
+ DOSE-H2O                 252
+ ALPHA-D                  253
+ SQBETA-D                 254
+ LGH-IONS                 255
+ HVY-IONS                 256
+ E+E-GAMM                 257
+ ANNIHRST                 258
+ ARC-DPA                  259
+ BLANK                    260
+1
+  === Output before the actual run - Beam properties ===
+
+
+
+  Fluka incident beam properties: 
+
+
+    Beam particle: PROTON   Id:   1 (Fluka)  2212 (PDG) Charge:   1 Baryon n.:   1
+                   Mass: 0.9383     (GeV/c^2) Mean life: 1.0000E+18 (s) Weight:  1.000    
+    Average beam momentum      :                   0.190281 (GeV/c)
+    Average beam kinetic energy:                   0.019100 (GeV)
+    Momentum deviation at FWHM (rectangular):        0.0000000 (GeV/c)
+    Beam hit position     :   0.00000000       0.00000000      -40.0000000      cm
+    Beam direction cosines:   0.00000000       0.00000000       1.00000000    
+    Beam outer radius:   0.20000      cm,   Beam inner radius:    0.0000      cm
+    Beam FWHM angular divergence (Rectangular ):    38.5000  (mrad)
+    (Spatial distribution, polarization, and angular direction and distribution
+    are given in the beam frame of reference)
+
+    Beam reference frame (world coordinates): 
+      Beam X axis:    1.00000000       0.00000000       0.00000000    
+      Beam Y axis:    0.00000000       1.00000000       0.00000000    
+      Beam Z axis:    0.00000000       0.00000000       1.00000000    
+
+    The nominal beam position belongs to region:       2 (VOID    ),
+    lattice cell:       0 (        )
+
+
+
+  === Particle transport thresholds:
+
+ Global cut-off kinetic energy for particle transport:  1.000E-04 GeV
+ The cut-off kinetic energy is superseded by individual particle thresholds if set
+
+
+   Cut-off kinetic energy for 4-HELIUM transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for 3-HELIUM transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for TRITON   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for DEUTERON transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for PROTON   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for APROTON  transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for ELECTRON transport defined in the Emfcut card
+
+   Cut-off kinetic energy for POSITRON transport defined in the Emfcut card
+
+   Cut-off kinetic energy for NEUTRIE  transport:  0.000E+00 GeV
+
+   Cut-off kinetic energy for ANEUTRIE transport:  0.000E+00 GeV
+
+   Cut-off kinetic energy for PHOTON   transport defined in the Emfcut card
+
+   Cut-off kinetic energy for NEUTRON  transport:  1.000E-14 GeV
+
+   Cut-off kinetic energy for ANEUTRON transport:  1.000E-05 GeV
+
+   Cut-off kinetic energy for MUON+    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for MUON-    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for KAONLONG transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for PION+    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for PION-    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for KAON+    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for KAON-    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for LAMBDA   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for ALAMBDA  transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for KAONSHRT transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for SIGMA-   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for SIGMA+   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for SIGMAZER transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for PIZERO   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for KAONZERO transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for AKAONZER transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for RESERVED transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for NEUTRIM  transport:  0.000E+00 GeV
+
+   Cut-off kinetic energy for ANEUTRIM transport:  0.000E+00 GeV
+
+   Cut-off kinetic energy for RESERVED transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for RESERVED transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for ASIGMA-  transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for ASIGMAZE transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for ASIGMA+  transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for XSIZERO  transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for AXSIZERO transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for XSI-     transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for AXSI+    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for OMEGA-   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for AOMEGA+  transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for WWLOWNEU transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for TAU+     transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for TAU-     transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for NEUTRIT  transport:  0.000E+00 GeV
+
+   Cut-off kinetic energy for ANEUTRIT transport:  0.000E+00 GeV
+
+   Cut-off kinetic energy for D+       transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for D-       transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for D0       transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for D0BAR    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for DS+      transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for DS-      transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for LAMBDAC+ transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for XSIC+    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for XSIC0    transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for XSIPC+   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for XSIPC0   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for OMEGAC0  transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for ALAMBDC- transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for AXSIC-   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for AXSIC0   transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for AXSIPC-  transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for AXSIPC0  transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for AOMEGAC0 transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for RESERVED transport:  1.000E-04 GeV
+
+   Cut-off kinetic energy for RESERVED transport:  1.000E-04 GeV
+
+
+  "Heavy" residual transport activated
+
+
+
+  === Termination conditions: ===
+
+ Maximum cpu-time allocated for this run: 100000000000000000.00 sec
+ Minimum cpu-time reserved for output:                 10000.00 sec
+ Maximum number of beam particles to be followed:     500000000
+ Maximum number of stars to be generated:              infinite
+
+
+
+  === Multiple Coulomb scattering: ===
+
+ Moliere Coulomb scattering for primaries:   T
+ Moliere Coulomb scattering for secondaries: T
+
+ Hadrons/muons:
+ Flag for MCS check with boundary normals: F
+ Flag for Coulomb single scattering(s) at boundaries: F
+ (# of Coulomb single scattering(s) at boundaries:        1)
+ Flag for single scatterings below min. (Moliere) energy: F
+
+
+
+
+  === Electromagnetic Showers: ===
+
+ EM showers are treated by the EMF (A.Fasso`,A.Ferrari,P.R.Sala) code
+
+ Electrons/positrons:
+ Flag for MCS check with boundary normals: F
+ Flag for Coulomb single scattering(s) at boundaries: T
+ (# of Coulomb single scattering(s) at boundaries:        1)
+ Flag for single scatterings below min. (Moliere) energy: T
+
+1
+  Region        Particle   importances         RR factor   Cut off  N.A. abs.   N.A. abs.  Bias. Dow.  Bias. Dow.
+  number  Fluka part.   EM part.  Low en. n.                group     group      factor       group      factor
+
+
+       1      1.0000     1.0000     1.0000                   261       261       8.500E-01       0       1.500E+00
+
+       2      1.0000     1.0000     1.0000                   261       261       8.500E-01       0       1.500E+00
+
+       3      1.0000     1.0000     1.0000                   261       261       8.500E-01       0       1.500E+00
+
+       4      1.0000     1.0000     1.0000                   261       261       8.500E-01       0       1.500E+00
+
+       5      1.0000     1.0000     1.0000                   261       261       8.500E-01       0       1.500E+00
+
+
+ ******* "usrbin" option:
+
+
+ No user binning defined
+
+
+ ******* "USRBDX" option:
+
+   Bdrx n.   1  "Neu1_out  " , generalized particle n.    8, from region n.     2 to region n.     4
+      detector area:  3.1416E+00 cm**2
+      low energy neutrons scored from group 1 to group   255
+      this is a one way only estimator
+      this is a fluence like estimator
+      logar. energy binning from  2.0000E-02 to  2.0000E-02 GeV,     0 bins (ratio : 1.0119E+00)
+      linear angular binning from  0.0000E+00 to  6.2832E+00 sr ,    20 bins ( 3.1416E-01 sr wide )
+      data will be printed on unit  -31 (unformatted if < 0)
+
+   Bdrx n.   2  "Neu2_out  " , generalized particle n.    8, from region n.     2 to region n.     5
+      detector area:  3.1416E+00 cm**2
+      low energy neutrons scored from group 1 to group   255
+      this is a one way only estimator
+      this is a fluence like estimator
+      logar. energy binning from  2.0000E-02 to  2.0000E-02 GeV,     0 bins (ratio : 1.0119E+00)
+      linear angular binning from  0.0000E+00 to  6.2832E+00 sr ,    20 bins ( 3.1416E-01 sr wide )
+      data will be printed on unit  -32 (unformatted if < 0)
+
+
+ ******* "USRTRACK" option:
+
+
+ No user track-length estimator defined
+
+
+ ******* "USRCOLL"  option:
+
+
+ No user collision density estimator defined
+
+
+ ******* "Usryield" option:
+
+
+ No user yield estimator defined
+
+
+ ******* "RESNUCLEI" option:
+
+
+ No residual nuclei estimator defined
+
+
+ ******* "Detect" option:
+
+
+ No detector defined
+
+
+
+  === Material compositions: ===
+
+ Material         Atomic           Atomic           Density          Inelastic        Elastic          Radiation        Inelastic
+ Number&Name      Number           Weight                            Scattering       Scattering       Length           Scattering
+                                                                     Length for       Length for                        Length for
+                                                                     PROTON   at      PROTON   at                       neutrons at
+                                                                     Beam energy      Beam energy                       Threshold
+                                                                                                                        Momentum
+
+                                                     g/cm**3            cm               cm               cm               cm
+
+    1 BLCKHOLE     0.000            0.000            0.000           0.1000E+31       0.1000E+31       0.1000E+31       0.1000E+31
+    2 VACUUM       0.000            0.000            0.000           0.1000E+31       0.1000E+31       0.1000E+31       0.1000E+31
+    3 HYDROGEN     1.000            1.008           0.8370E-04       0.9569E+09       0.1178E+06       0.7532E+06       0.8508E+09
+    4 HELIUM       2.000            4.003           0.1660E-03       0.4598E+07       0.4485E+05       0.5682E+06       0.6024E+34
+    5 BERYLLIU     4.000            9.012            1.848            14.61            12.19            35.28            17.26    
+    6 CARBON       6.000            12.01            2.000            23.31            11.56            21.35            18.23    
+    7 NITROGEN     7.000            14.01           0.1170E-02       0.3998E+05       0.2320E+05       0.3247E+05       0.3319E+05
+    8 OXYGEN       8.000            16.00           0.1330E-02       0.3734E+05       0.2391E+05       0.2574E+05       0.3013E+05
+    9 MAGNESIU     12.00            24.30            1.740            27.65            28.02            14.39            26.58    
+   10 ALUMINUM     13.00            26.98            2.699            21.41            20.83            8.896            17.24    
+   11 IRON         26.00            55.84            7.874            10.15            13.50            1.757            9.128    
+   12 COPPER       29.00            63.55            8.960            11.33            13.31            1.436            8.423    
+   13 SILVER       47.00            107.9            10.50            12.51            12.44           0.8543            10.59    
+   14 SILICON      14.00            28.09            2.329            23.01            25.16            9.370            20.38    
+   15 GOLD         79.00            197.0            19.32            13.17            8.497           0.3344            7.012    
+   16 MERCURY      80.00            200.6            13.55            17.67            12.47           0.4752            9.852    
+   17 LEAD         82.00            207.2            11.35            20.28            15.12           0.5612            12.03    
+   18 TANTALUM     73.00            180.9            16.65            12.20            9.714           0.4094            7.390    
+   19 SODIUM       11.00            22.99           0.9710            51.29            46.06            28.56            47.77    
+   20 ARGON        18.00            39.95           0.1660E-02       0.4535E+05       0.4473E+05       0.1178E+05       0.3754E+05
+   21 CALCIUM      20.00            40.08            1.550            50.40            54.53            10.42            36.39    
+   22 TIN          50.00            118.7            7.310            18.12            19.11            1.206            14.37    
+   23 TUNGSTEN     74.00            183.8            19.30            10.87            8.718           0.3504            6.172    
+   24 TITANIUM     22.00            47.87            4.540            16.76            19.53            3.560            15.11    
+   25 NICKEL       28.00            58.69            8.902            10.50            12.22            1.424            8.419    
+   26 MO_100       42.00            99.91            10.22            12.55            13.24           0.9989            9.413    
+   27 MO_98        42.00            97.91            10.22            12.50            13.26           0.9788            9.350    
+   28 MO_97        42.00            96.91            10.22            12.48            13.26           0.9689            9.318    
+   29 MO_96        42.00            95.90            10.22            12.45            13.27           0.9588            9.286    
+   30 MO_95        42.00            94.91            10.22            12.42            13.27           0.9489            9.253    
+   31 MO_94        42.00            93.91            10.22            12.40            13.27           0.9389            9.220    
+   32 MO_92        42.00            91.91            10.22            12.35            13.26           0.9189            9.155    
+   33 MOLYB        42.00            99.89            10.22            12.55            13.24           0.9987            9.413    
+
+      Material        Number          Atom content    Partial Densities
+
+      MO_100          26              0.99636          10.184    
+      MO_98           27              0.11474E-02     0.11493E-01
+      MO_97           28              0.49888E-03     0.49461E-02
+      MO_96           29              0.49888E-03     0.48950E-02
+      MO_95           30              0.49888E-03     0.48440E-02
+      MO_94           31              0.49888E-03     0.47929E-02
+      MO_92           32              0.49888E-03     0.46910E-02
+
+
+
+
+
+
+
+
+
+  === Regions: materials and fields ===
+
+ Region N. and Name Material N. and Name  Magn./El. Field (on/off)
+         (Mat. N. and Name Magn./El. Field (on/off) for radioactive products)
+                                                Minimum  and  Maximum step size (cm) 
+     1  BLKBODY      1  BLCKHOLE  OFF            0.00000E+00     9.99852E+04
+                  (  1  BLCKHOLE OFF )
+     2  VOID         2  VACUUM    OFF            0.00000E+00     9.99852E+04
+                  (  2  VACUUM   OFF )
+     3  TARGET      33  MOLYB     OFF            0.00000E+00     9.99852E+04
+                  ( 33  MOLYB    OFF )
+     4  VD_sph1      2  VACUUM    OFF            0.00000E+00     9.99852E+04
+                  (  2  VACUUM   OFF )
+     5  VD_sph2      2  VACUUM    OFF            0.00000E+00     9.99852E+04
+                  (  2  VACUUM   OFF )
+
+
+  === End of the output associated with the input ===
+
+1
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!! FULLY ANALOGUE RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ Total time used for initialization:   1.47     s
+
+
+1NUMBER OF BEAM       NUMBER OF BEAM        APPROXIMATE NUMBER    AVERAGE TIME USED     TIME LEFT (RESERVED   NUMBER OF STARS
+ PARTICLES HANDLED    PARTICLES LEFT        OF BEAM PARTICLES     BY A BEAM PARTICLE     10000.0 SECONDS      CREATED
+                                            THAT CAN STILL BE                           FOR PRINTOUT)
+                                            HANDLED
+
+ NEXT SEEDS:18B0AB50      C0       0       0       0       0    5B95     3B7       0       0
+          1             499999999             499999999             1.3494492E-04         1.0000000E+30                 0       
+ NEXT SEEDS:18B0AC26      C0       0       0       0       0    5B95     3B7       0       0
+   10000000             490000000             490000000             4.7724664E-05         1.0000000E+30             33128       
+ NEXT SEEDS:142981B3      C2       0       0       0       0    5B95     3B7       0       0
+   20000000             480000000             480000000             4.8783412E-05         1.0000000E+30             66358       
+ NEXT SEEDS: F9E6373      C4       0       0       0       0    5B95     3B7       0       0
+   30000000             470000000             470000000             4.9427996E-05         1.0000000E+30             99636       
+ NEXT SEEDS: B1A0454      C6       0       0       0       0    5B95     3B7       0       0
+   40000000             460000000             460000000             4.9594489E-05         1.0000000E+30            132866       
+ NEXT SEEDS: 6937854      C8       0       0       0       0    5B95     3B7       0       0
+   50000000             450000000             450000000             4.9718033E-05         1.0000000E+30            166284       
+ NEXT SEEDS: 20DCC53      CA       0       0       0       0    5B95     3B7       0       0
+   60000000             440000000             440000000             4.9466077E-05         1.0000000E+30            199459       
+ NEXT SEEDS:392005D9      CB       0       0       0       0    5B95     3B7       0       0
+   70000000             430000000             430000000             4.9173476E-05         1.0000000E+30            232501       
+ NEXT SEEDS:3496E6D1      CD       0       0       0       0    5B95     3B7       0       0
+   80000000             420000000             420000000             4.8976844E-05         1.0000000E+30            265979       
+ NEXT SEEDS:301A6F83      CF       0       0       0       0    5B95     3B7       0       0
+   90000000             410000000             410000000             4.8753833E-05         1.0000000E+30            299047       
+ NEXT SEEDS:2B9640D9      D1       0       0       0       0    5B95     3B7       0       0
+  100000000             400000000             400000000             4.8692176E-05         1.0000000E+30            332162       
+ NEXT SEEDS:2709CD59      D3       0       0       0       0    5B95     3B7       0       0
+  110000000             390000000             390000000             4.8710931E-05         1.0000000E+30            365516       
+ NEXT SEEDS:22883DC3      D5       0       0       0       0    5B95     3B7       0       0
+  120000000             380000000             380000000             4.8671788E-05         1.0000000E+30            398916       
+ NEXT SEEDS:1E0D4302      D7       0       0       0       0    5B95     3B7       0       0
+  130000000             370000000             370000000             4.8643181E-05         1.0000000E+30            432549       
+ NEXT SEEDS:199090D0      D9       0       0       0       0    5B95     3B7       0       0
+  140000000             360000000             360000000             4.8619617E-05         1.0000000E+30            465646       
+ NEXT SEEDS:150D6673      DB       0       0       0       0    5B95     3B7       0       0
+  150000000             350000000             350000000             4.8613693E-05         1.0000000E+30            498942       
+ NEXT SEEDS:108947F7      DD       0       0       0       0    5B95     3B7       0       0
+  160000000             340000000             340000000             4.8571880E-05         1.0000000E+30            532290       
+ NEXT SEEDS: C03C2D9      DF       0       0       0       0    5B95     3B7       0       0
+  170000000             330000000             330000000             4.8531654E-05         1.0000000E+30            565394       
+ NEXT SEEDS: 7770B58      E1       0       0       0       0    5B95     3B7       0       0
+  180000000             320000000             320000000             4.8489064E-05         1.0000000E+30            598675       
+ NEXT SEEDS: 2E9DC44      E3       0       0       0       0    5B95     3B7       0       0
+  190000000             310000000             310000000             4.8448131E-05         1.0000000E+30            631672       
+ NEXT SEEDS:39F75C95      E4       0       0       0       0    5B95     3B7       0       0
+  200000000             300000000             300000000             4.8460021E-05         1.0000000E+30            664785       
+ NEXT SEEDS:3570C714      E6       0       0       0       0    5B95     3B7       0       0
+  210000000             290000000             290000000             4.8479303E-05         1.0000000E+30            698320       
+ NEXT SEEDS:30F1DA14      E8       0       0       0       0    5B95     3B7       0       0
+  220000000             280000000             280000000             4.8523900E-05         1.0000000E+30            731841       
+ NEXT SEEDS:2C719F99      EA       0       0       0       0    5B95     3B7       0       0
+  230000000             270000000             270000000             4.8530737E-05         1.0000000E+30            765316       
+ NEXT SEEDS:27EDDEF3      EC       0       0       0       0    5B95     3B7       0       0
+  240000000             260000000             260000000             4.8576043E-05         1.0000000E+30            798718       
+ NEXT SEEDS:23675E7B      EE       0       0       0       0    5B95     3B7       0       0
+  250000000             250000000             250000000             4.8558466E-05         1.0000000E+30            831644       
+ NEXT SEEDS:1ED4B4DC      F0       0       0       0       0    5B95     3B7       0       0
+  260000000             240000000             240000000             4.8506469E-05         1.0000000E+30            865347       
+ NEXT SEEDS:1A581947      F2       0       0       0       0    5B95     3B7       0       0
+  270000000             230000000             230000000             4.8497780E-05         1.0000000E+30            898622       
+ NEXT SEEDS:15D3D27F      F4       0       0       0       0    5B95     3B7       0       0
+  280000000             220000000             220000000             4.8816725E-05         1.0000000E+30            931776       
+ NEXT SEEDS:1146C00F      F6       0       0       0       0    5B95     3B7       0       0
+  290000000             210000000             210000000             4.8853554E-05         1.0000000E+30            965099       
+ NEXT SEEDS: CC9A7DE      F8       0       0       0       0    5B95     3B7       0       0
+  300000000             200000000             200000000             4.8794444E-05         1.0000000E+30            998440       
+ NEXT SEEDS: 84148CE      FA       0       0       0       0    5B95     3B7       0       0
+  310000000             190000000             190000000             4.8743587E-05         1.0000000E+30           1032138       
+ NEXT SEEDS: 3C25190      FC       0       0       0       0    5B95     3B7       0       0
+  320000000             180000000             180000000             4.8693421E-05         1.0000000E+30           1065276       
+ NEXT SEEDS:3AD8C340      FD       0       0       0       0    5B95     3B7       0       0
+  330000000             170000000             170000000             4.8650208E-05         1.0000000E+30           1098446       
+ NEXT SEEDS:364FEA78      FF       0       0       0       0    5B95     3B7       0       0
+  340000000             160000000             160000000             4.8612389E-05         1.0000000E+30           1131940       
+ NEXT SEEDS:31CE0CAB     101       0       0       0       0    5B95     3B7       0       0
+  350000000             150000000             150000000             4.8574367E-05         1.0000000E+30           1165167       
+ NEXT SEEDS:2D48810F     103       0       0       0       0    5B95     3B7       0       0
+  360000000             140000000             140000000             4.8558771E-05         1.0000000E+30           1198211       
+ NEXT SEEDS:28BCA6D2     105       0       0       0       0    5B95     3B7       0       0
+  *** Rcfset:kprin,bfcmax,epat00,ppat00,ravpot           1  -3.0119810661364266E-002  0.94299112675812125        9.4219623390327190E-002   12.440777676959296     
+  370000000             130000000             130000000             4.8548256E-05         1.0000000E+30           1231319       
+ NEXT SEEDS:2434948E     107       0       0       0       0    5B95     3B7       0       0
+  380000000             120000000             120000000             4.8534666E-05         1.0000000E+30           1264702       
+ NEXT SEEDS:1FAC44DF     109       0       0       0       0    5B95     3B7       0       0
+  390000000             110000000             110000000             4.8541064E-05         1.0000000E+30           1298319       
+ NEXT SEEDS:1B2E2279     10B       0       0       0       0    5B95     3B7       0       0
+  400000000             100000000             100000000             4.8533665E-05         1.0000000E+30           1331308       
+ NEXT SEEDS:16A7A191     10D       0       0       0       0    5B95     3B7       0       0
+  410000000              90000000              90000000             4.8507863E-05         1.0000000E+30           1364588       
+ NEXT SEEDS:122463D0     10F       0       0       0       0    5B95     3B7       0       0
+  *** Rcfset:kprin,bfcmax,epat00,ppat00,ravpot           1  -8.1924088925684257E-002  0.94276464112176450        9.1925191523941005E-002   12.440777676959296     
+  420000000              80000000              80000000             4.8487126E-05         1.0000000E+30           1397718       
+ NEXT SEEDS: D9E37B2     111       0       0       0       0    5B95     3B7       0       0
+  430000000              70000000              70000000             4.8475389E-05         1.0000000E+30           1430910       
+ NEXT SEEDS: 9178DEB     113       0       0       0       0    5B95     3B7       0       0
+  440000000              60000000              60000000             4.8456972E-05         1.0000000E+30           1464184       
+ NEXT SEEDS: 495DD35     115       0       0       0       0    5B95     3B7       0       0
+  450000000              50000000              50000000             4.8440463E-05         1.0000000E+30           1497440       
+ NEXT SEEDS:  1059F0     117       0       0       0       0    5B95     3B7       0       0
+  460000000              40000000              40000000             4.8428565E-05         1.0000000E+30           1530912       
+ NEXT SEEDS:37265CC9     118       0       0       0       0    5B95     3B7       0       0
+  470000000              30000000              30000000             4.8430176E-05         1.0000000E+30           1564170       
+ NEXT SEEDS:32A0715E     11A       0       0       0       0    5B95     3B7       0       0
+  480000000              20000000              20000000             4.8434451E-05         1.0000000E+30           1597318       
+ NEXT SEEDS:2E1A0CB4     11C       0       0       0       0    5B95     3B7       0       0
+  490000000              10000000              10000000             4.8437762E-05         1.0000000E+30           1630476       
+ NEXT SEEDS:298D538D     11E       0       0       0       0    5B95     3B7       0       0
+  499999950                    50                    50             4.8436796E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BE699     120       0       0       0       0    5B95     3B7       0       0
+  499999951                    49                    49             4.8436800E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BE766     120       0       0       0       0    5B95     3B7       0       0
+  499999952                    48                    48             4.8436800E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BE83F     120       0       0       0       0    5B95     3B7       0       0
+  499999953                    47                    47             4.8436800E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BE90E     120       0       0       0       0    5B95     3B7       0       0
+  499999954                    46                    46             4.8436800E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BE9F0     120       0       0       0       0    5B95     3B7       0       0
+  499999955                    45                    45             4.8436800E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BEABA     120       0       0       0       0    5B95     3B7       0       0
+  499999956                    44                    44             4.8436800E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BEB7A     120       0       0       0       0    5B95     3B7       0       0
+  499999957                    43                    43             4.8436800E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BEC3E     120       0       0       0       0    5B95     3B7       0       0
+  499999958                    42                    42             4.8436800E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BED14     120       0       0       0       0    5B95     3B7       0       0
+  499999959                    41                    41             4.8436799E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BEDF6     120       0       0       0       0    5B95     3B7       0       0
+  499999960                    40                    40             4.8436803E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BEED7     120       0       0       0       0    5B95     3B7       0       0
+  499999961                    39                    39             4.8436803E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BEFAA     120       0       0       0       0    5B95     3B7       0       0
+  499999962                    38                    38             4.8436803E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF08B     120       0       0       0       0    5B95     3B7       0       0
+  499999963                    37                    37             4.8436803E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF158     120       0       0       0       0    5B95     3B7       0       0
+  499999964                    36                    36             4.8436803E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF221     120       0       0       0       0    5B95     3B7       0       0
+  499999965                    35                    35             4.8436803E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF2F5     120       0       0       0       0    5B95     3B7       0       0
+  499999966                    34                    34             4.8436803E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF2FC     120       0       0       0       0    5B95     3B7       0       0
+  499999967                    33                    33             4.8436803E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF3D7     120       0       0       0       0    5B95     3B7       0       0
+  499999968                    32                    32             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF4A9     120       0       0       0       0    5B95     3B7       0       0
+  499999969                    31                    31             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF58C     120       0       0       0       0    5B95     3B7       0       0
+  499999970                    30                    30             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF662     120       0       0       0       0    5B95     3B7       0       0
+  499999971                    29                    29             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF73B     120       0       0       0       0    5B95     3B7       0       0
+  499999972                    28                    28             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF80F     120       0       0       0       0    5B95     3B7       0       0
+  499999973                    27                    27             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF8E4     120       0       0       0       0    5B95     3B7       0       0
+  499999974                    26                    26             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BF9B4     120       0       0       0       0    5B95     3B7       0       0
+  499999975                    25                    25             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BFA7F     120       0       0       0       0    5B95     3B7       0       0
+  499999976                    24                    24             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BFA88     120       0       0       0       0    5B95     3B7       0       0
+  499999977                    23                    23             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BFB55     120       0       0       0       0    5B95     3B7       0       0
+  499999978                    22                    22             4.8436802E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BFC26     120       0       0       0       0    5B95     3B7       0       0
+  499999979                    21                    21             4.8436801E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BFCF5     120       0       0       0       0    5B95     3B7       0       0
+  499999980                    20                    20             4.8436801E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BFDC8     120       0       0       0       0    5B95     3B7       0       0
+  499999981                    19                    19             4.8436801E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BFEAA     120       0       0       0       0    5B95     3B7       0       0
+  499999982                    18                    18             4.8436801E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250BFF86     120       0       0       0       0    5B95     3B7       0       0
+  499999983                    17                    17             4.8436801E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C0056     120       0       0       0       0    5B95     3B7       0       0
+  499999984                    16                    16             4.8436801E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C011E     120       0       0       0       0    5B95     3B7       0       0
+  499999985                    15                    15             4.8436801E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C022D     120       0       0       0       0    5B95     3B7       0       0
+  499999986                    14                    14             4.8436801E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C030B     120       0       0       0       0    5B95     3B7       0       0
+  499999987                    13                    13             4.8436801E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C03E0     120       0       0       0       0    5B95     3B7       0       0
+  499999988                    12                    12             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C04BB     120       0       0       0       0    5B95     3B7       0       0
+  499999989                    11                    11             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C058F     120       0       0       0       0    5B95     3B7       0       0
+  499999990                    10                    10             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C066E     120       0       0       0       0    5B95     3B7       0       0
+  499999991                     9                     9             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C0739     120       0       0       0       0    5B95     3B7       0       0
+  499999992                     8                     8             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C080C     120       0       0       0       0    5B95     3B7       0       0
+  499999993                     7                     7             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C0813     120       0       0       0       0    5B95     3B7       0       0
+  499999994                     6                     6             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C081A     120       0       0       0       0    5B95     3B7       0       0
+  499999995                     5                     5             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C08FC     120       0       0       0       0    5B95     3B7       0       0
+  499999996                     4                     4             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C09DF     120       0       0       0       0    5B95     3B7       0       0
+  499999997                     3                     3             4.8436804E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C0AC1     120       0       0       0       0    5B95     3B7       0       0
+  499999998                     2                     2             4.8436807E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C0AC8     120       0       0       0       0    5B95     3B7       0       0
+  499999999                     1                     1             4.8436807E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C0B99     120       0       0       0       0    5B95     3B7       0       0
+  500000000                     0                     1             4.8436807E-05         1.0000000E+30           1663992       
+ NEXT SEEDS:250C0BA2     120       0       0       0       0    5B95     3B7       0       0
+ All cases handled by Feeder.
+1Region # name     volume         ALL-PART Star Density   BEAMPART Star Density   ENERGY        Density   EM-ENRGY      Density   
+                in cubic cm       Stars/cm**3             Stars/cm**3               GeV/cm**3               GeV/cm**3          
+                                  /one beam particle      /one beam particle      /one beam particle      /one beam particle   
+
+      1 BLKBODY  1.000000000D+00         0.000000000D+00         0.000000000D+00         9.380526481D-03         1.338521082D-05
+      2 VOID     1.000000000D+00         0.000000000D+00         0.000000000D+00         0.000000000D+00         0.000000000D+00
+      3 TARGET   1.000000000D+00         3.327984000D-03         3.327894000D-03         9.697563031D-03         1.231954230D-06
+      4 VD_sph1  1.000000000D+00         0.000000000D+00         0.000000000D+00         0.000000000D+00         0.000000000D+00
+      5 VD_sph2  1.000000000D+00         0.000000000D+00         0.000000000D+00         0.000000000D+00         0.000000000D+00
+
+ Total (integrated over volume):         3.327984000D-03         3.327894000D-03         1.907808951D-02         1.461716505D-05
+
+ ***** Next control card *****   STOP       0.000       0.000       0.000       0.000       0.000       0.000                
+
+
+ **** Total number of not-performed scatterings in FLUKA:    9895815
+ **** Total number of scatterings with no  LDA  in FLUKA:  410293590
+ **** Ratio of rejected/accepted samplings from the Moliere's distribution in FLUKA:   0.0049
+ **** ( Total multiple scatterings: 5.9857E+09: Total single scatterings: 0.0000E+00,
+ ****   split into: 1 0.0000E+00 2 0.0000E+00 3 0.0000E+00 4 0.0000E+00 5 0.0000E+00)
+
+
+ **** Total number of not-performed scatterings in EMF  :          0
+ **** Total number of scatterings with no  LDA  in EMF  :     280053
+ **** Ratio of rejected/accepted samplings from the Moliere's distribution in EMF  :   0.0000
+ **** ( Total multiple scatterings: 5.7005E+07: Total single scatterings: 5.9773E+06 )
+
+
+
+
+
+ * ========================================================================== *
+ * ====       Summary of FLUKA v4 run (Copyright (C) 2020 CERN)          ==== *
+ * ========================================================================== *
+
+
+
+  Total number of primaries run:      500000000 for a weight of: 5.000000E+08
+  !!! Please remember that all results are normalized  per unit weight !!!
+  The main stack maximum occupancy was        198 out of      70000 available
+
+
+  Total number of inelastic interactions (stars):           1663992
+  Total weight of the inelastic interactions (stars):  1.663992E+06
+
+
+  Total number of elastic interactions:           1693188
+  Total weight of the elastic interactions:  1.693188E+06
+
+
+  Total number of low energy neutron interactions:             123497
+  Total weight of the low energy neutron interactions: 1.234970E+05
+
+  Total CPU time used to follow all primary particles:   2.422E+04 seconds of:                                                   
+  Average CPU time used to follow a primary particle:    4.844E-05 seconds of:                                                   
+  Maximum CPU time used to follow a primary particle:    1.189E-01 seconds of:                                                   
+  Residual CPU time left:                                1.000E+30 seconds of:                                                   
+
+
+ Number of stars generated per beam particle:
+ Prompt radiation      Radioactive decays
+   3.3280E-03 (100.%)   0.0000E+00 (100.%) 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by 4-HELIUM
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by 3-HELIUM
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by TRITON  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by DEUTERON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by HEAVYION
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by OPTIPHOT
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by RAY     
+   3.3280E-03 (****%)   0.0000E+00 ( 0.0%) generated by PROTON  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by APROTON 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ELECTRON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by POSITRON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by NEUTRIE 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ANEUTRIE
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by PHOTON  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by NEUTRON 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ANEUTRON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by MUON+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by MUON-   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by KAONLONG
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by PION+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by PION-   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by KAON+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by KAON-   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by LAMBDA  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ALAMBDA 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by KAONSHRT
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by SIGMA-  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by SIGMA+  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by SIGMAZER
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by PIZERO  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by KAONZERO
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by AKAONZER
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by NEUTRIM 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ANEUTRIM
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ASIGMA- 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ASIGMAZE
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ASIGMA+ 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by XSIZERO 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by AXSIZERO
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by XSI-    
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by AXSI+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by OMEGA-  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by AOMEGA+ 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by WWLOWNEU
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by TAU+    
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by TAU-    
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by NEUTRIT 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ANEUTRIT
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by D+      
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by D-      
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by D0      
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by D0BAR   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by DS+     
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by DS-     
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by LAMBDAC+
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by XSIC+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by XSIC0   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by XSIPC+  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by XSIPC0  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by OMEGAC0 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by ALAMBDC-
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by AXSIC-  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by AXSIC0  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by AXSIPC- 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by AXSIPC0 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by AOMEGAC0
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) generated by RESERVED
+
+ Number of secondaries generated in inelastic interactions per beam particle:
+ Prompt radiation      Radioactive decays
+   1.7482E-02 (100.%)   2.0252E-02 (100.%) 
+   4.2660E-06 ( 0.0%)   0.0000E+00 ( 0.0%) 4-HELIUM
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) 3-HELIUM
+   3.2000E-08 ( 0.0%)   0.0000E+00 ( 0.0%) TRITON  
+   4.2400E-07 ( 0.0%)   0.0000E+00 ( 0.0%) DEUTERON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) HEAVYION
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) OPTIPHOT
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RAY     
+   1.1616E-04 ( 0.7%)   0.0000E+00 ( 0.0%) PROTON  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) APROTON 
+   0.0000E+00 ( 0.0%)   1.2550E-02 (62.0%) ELECTRON
+   0.0000E+00 ( 0.0%)   1.1300E-06 ( 0.0%) POSITRON
+   0.0000E+00 ( 0.0%)   1.1300E-06 ( 0.0%) NEUTRIE 
+   0.0000E+00 ( 0.0%)   3.2559E-03 (16.1%) ANEUTRIE
+   1.1188E-02 (64.0%)   4.4447E-03 (21.9%) PHOTON  
+   6.1729E-03 (35.3%)   0.0000E+00 ( 0.0%) NEUTRON 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ANEUTRON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) MUON+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) MUON-   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAONLONG
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) PION+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) PION-   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAON+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAON-   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) LAMBDA  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ALAMBDA 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAONSHRT
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) SIGMA-  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) SIGMA+  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) SIGMAZER
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) PIZERO  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAONZERO
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AKAONZER
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) NEUTRIM 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ANEUTRIM
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ASIGMA- 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ASIGMAZE
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ASIGMA+ 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIZERO 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIZERO
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSI-    
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSI+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) OMEGA-  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AOMEGA+ 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) WWLOWNEU
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) TAU+    
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) TAU-    
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) NEUTRIT 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ANEUTRIT
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) D+      
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) D-      
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) D0      
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) D0BAR   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) DS+     
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) DS-     
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) LAMBDAC+
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIC+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIC0   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIPC+  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIPC0  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) OMEGAC0 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ALAMBDC-
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIC-  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIC0  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIPC- 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIPC0 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AOMEGAC0
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+
+ Number of stopping particles per beam particle:
+ Prompt radiation      Radioactive decays
+   5.9092E-04 (100.%)   0.0000E+00 (100.%) 
+   4.1040E-06 ( 0.7%)   0.0000E+00 ( 0.0%) 4-HELIUM
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) 3-HELIUM
+   3.2000E-08 ( 0.0%)   0.0000E+00 ( 0.0%) TRITON  
+   4.1400E-07 ( 0.1%)   0.0000E+00 ( 0.0%) DEUTERON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) HEAVYION
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) OPTIPHOT
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RAY     
+   5.8637E-04 (99.2%)   0.0000E+00 ( 0.0%) PROTON  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) APROTON 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ELECTRON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) POSITRON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) NEUTRIE 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ANEUTRIE
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) PHOTON  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) NEUTRON 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ANEUTRON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) MUON+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) MUON-   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAONLONG
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) PION+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) PION-   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAON+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAON-   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) LAMBDA  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ALAMBDA 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAONSHRT
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) SIGMA-  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) SIGMA+  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) SIGMAZER
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) PIZERO  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) KAONZERO
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AKAONZER
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) NEUTRIM 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ANEUTRIM
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ASIGMA- 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ASIGMAZE
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ASIGMA+ 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIZERO 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIZERO
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSI-    
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSI+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) OMEGA-  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AOMEGA+ 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) WWLOWNEU
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) TAU+    
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) TAU-    
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) NEUTRIT 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ANEUTRIT
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) D+      
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) D-      
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) D0      
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) D0BAR   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) DS+     
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) DS-     
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) LAMBDAC+
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIC+   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIC0   
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIPC+  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) XSIPC0  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) OMEGAC0 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) ALAMBDC-
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIC-  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIC0  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIPC- 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AXSIPC0 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) AOMEGAC0
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) RESERVED
+
+ Number of secondaries created by low energy neutron per beam particle:
+ Prompt radiation      Radioactive decays
+   3.0725E-04 (100.%)   0.0000E+00 (100.%) 
+   2.4604E-04 (80.1%)   0.0000E+00 ( 0.0%) elastic NEUTRON 
+   5.0200E-07 ( 0.2%)   0.0000E+00 ( 0.0%) inelastic NEUTRON 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) fission NEUTRON 
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) PROTON  
+   6.1204E-05 (19.9%)   0.0000E+00 ( 0.0%) PHOTON  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) DEUTERON
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) TRITON  
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) 3-HELIUM
+   0.0000E+00 ( 0.0%)   0.0000E+00 ( 0.0%) 4-HELIUM
+
+   1.9100E-02  (100.%) GeV available per beam particle divided into
+ Prompt radiation      Radioactive decays
+   9.6956E-03  (50.8%)   0.0000E+00 ( 0.0%) GeV hadron and muon dE/dx
+   3.0883E-07  ( 0.0%)   9.2312E-07 ( 0.0%) GeV electro-magnetic showers
+   7.1976E-07  ( 0.0%)   0.0000E+00 ( 0.0%) GeV nuclear recoils and heavy fragments
+   0.0000E+00  ( 0.0%)   0.0000E+00 ( 0.0%) GeV particles below threshold
+   0.0000E+00  ( 0.0%)   0.0000E+00 ( 0.0%) GeV residual excitation energy
+   3.5721E-09  ( 0.0%)   0.0000E+00 ( 0.0%) GeV low energy neutrons
+   9.3801E-03  (49.1%)   4.6455E-07 ( 0.0%) GeV particles escaping the system
+   0.0000E+00  ( 0.0%)   1.2063E-06 ( 0.0%) GeV particles discarded
+   0.0000E+00  ( 0.0%)   0.0000E+00 ( 0.0%) GeV particles out of time limit
+   2.0704E-05  ( 0.1%)                      GeV missing
+
+
+
+
+
+ * ========================================================================== *
+ * ======        End of FLUKA v4 run (Copyright (C) 2020 CERN)         ====== *
+ * ========================================================================== *
+

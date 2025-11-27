@@ -1,0 +1,225 @@
+# flair project file
+Version: 300
+Mode: fluka
+Title: simNeutroni
+md5: ce6d779fca5cded26e1b5677cf5479d0
+Input:
+#define energy -0.010
+#define thickness 0.03
+PHYSICS COALESCE 1
+PHYSICS EVAPORAT 3
+TITLE
+	simNeutroni
+*Set the defaults for precision simulations
+DEFAULTS PRECISIO
+BEAM PROTON $energy,, 38.5 0.2 0 -1.0
+	scale=5000
+	@select=1
+*Define the beam position
+BEAMPOS ,,, -40
+GEOBEGIN COMBNAME
+*Black body
+SPH blkbody 0.0 0.0 0.0 100.0
+*Cylindrical target
+RCC target 0.0 0.0 0.0 0.0 0.0 $thickness 0.75
+SPH sph_1 5.0 0 0 0.5
+	@select=8
+SPH sph_2 0 0 5.0 0.5
+	@select=8
+END
+*Black hole
+REGION BLKBODY 5
+	-blkbody
+*Void around
+REGION VOID 5
+	+blkbody -target -sph_1 -sph_2
+*Target
+REGION TARGET 5
+	+target
+REGION VD_sph1
+	+sph_1
+REGION VD_sph2
+	+sph_2
+END
+GEOEND
+*Isotopes, material and compound definition
+MATERIAL MO_100 42,, 10.22,,, 100
+LOW-MAT 100-MO MO_100 42 100 296
+MATERIAL MO_98 42,, 10.22,,, 98
+LOW-MAT 98-MO MO_98 42 98 296
+MATERIAL MO_97 42,, 10.22,,, 97
+LOW-MAT 97-MO MO_97 42 97 296
+MATERIAL MO_96 42,, 10.22,,, 96
+LOW-MAT 96-MO MO_96 42 96 296
+MATERIAL MO_95 42,, 10.22,,, 95
+LOW-MAT 95-MO MO_95 42 95 296
+MATERIAL MO_94 42,, 10.22,,, 94
+LOW-MAT 94-MO MO_94 42 94 296
+MATERIAL MO_92 42,, 10.22,,, 92
+LOW-MAT 92-MO MO_92 42 92 296
+MATERIAL MOLYB,,, 10.22
+COMPOUND MOLYB 0.9986 MO_100 0.00115 MO_98 0.0005 MO_97 0.0005 MO_96 0.0005 MO_95 \
+	 0.0005 MO_94 0.0005 MO_92
+!COMPOUND MOLYB 1.0 MO_100 0 MO_98 0 MO_97
+ASSIGNMA , BLCKHOLE BLKBODY
+ASSIGNMA , VACUUM VOID
+ASSIGNMA , MOLYB TARGET
+ASSIGNMA , VACUUM VD_sph1
+ASSIGNMA , VACUUM VD_sph2
+****************************************************************************
+*Requests simulation of radioactive decays and sets the corresponding
+*biasing and transport conditions
+RADDECAY , 1 1
+*Define an irradiation profile for radioactive decay calculations
+IRRPROFI , =1*hour =6241509074461*50
+*Defines decay times for radioactive product scoring
+DCYTIMES , 0.1 600
+**************************************************************************
+*Neutron fluence entering - Dim sfera R=0.5 cm
+USRBDX Neu1_out 99 NEUTRON -31 VOID VD_sph1 =4*pi*0.5*0.5 0.02 1E-12 2000,,, 20
+*Neutron fluence entering - Dim sfera R=0.5 cm
+USRBDX Neu2_out 99 NEUTRON -32 VOID VD_sph2 =4*pi*0.5*0.5 0.02 1E-12 2000,,, 20
+***********************************************************************
+*Neutron fluence after 0.1 sec
+!USRBDX Neu1_01 99 NEUTRON -51 VOID VD_sph1 =4*pi*0.5*0.5 0.02 1E-12 2000,,, 20
+!DCYSCORE USRBDX 1,,, Neu1_01
+*Neutron fluence after 0.1 sec
+!USRBDX Neu2_01 99 NEUTRON -52 VOID VD_sph2 =4*pi*0.5*0.5 0.02 1E-12 2000,,, 20
+!DCYSCORE USRBDX 1,,, Neu2_01
+***********************************************************************
+*Neutron fluence after 1200 sec
+!USRBDX Neu1_600 99 NEUTRON -53 VOID VD_sph1 =4*pi*0.5*0.5 0.02 1E-12 2000,,, 20
+!DCYSCORE USRBDX 2,,, Neu1_600
+*Neutron fluence after 1200 sec
+!USRBDX Neu2_600 99 NEUTRON -54 VOID VD_sph2 =4*pi*0.5*0.5 0.02 1E-12 2000,,, 20
+!DCYSCORE USRBDX 2,,, Neu2_600
+*************************************************************************
+*Set the random number seed
+RANDOMIZ ,, 595959
+*Set the number of primary histories to be simulated in the run
+START , 500000000
+STOP
+EndInput
+
+Page: Plot
+Calculator:
+	|C_p = 1.602176634e-19
+	|I = 1e-6
+	|Qta = I/C_p
+	|> Qta = 6241509074460.763
+plotengine: Gnuplot
+
+# Run information
+Run: <default>
+	StartRun: 1679648513
+	queue:    *Default
+End
+Run: simneu
+	Define:   energy=-0.0191
+	Define:   thickness=0.0589
+	Rnd:      95123444
+	Last:     10
+	Status:   3
+	mode:     fluka
+	StartRun: 1681764478
+	queue:    *Default
+End
+Run: simneu_01
+	Rnd:      95123445
+	Last:     10
+	Status:   3
+	StartRun: 1682616963
+	Parent:   simneu
+	queue:    *Default
+End
+Run: simneu_02
+	Rnd:      95123446
+	Last:     10
+	Status:   3
+	StartRun: 1682616963
+	Parent:   simneu
+	queue:    *Default
+End
+Run: simneu_03
+	Rnd:      95123447
+	Last:     10
+	Status:   3
+	StartRun: 1682616963
+	Parent:   simneu
+	queue:    *Default
+End
+Run: simneu_04
+	Rnd:      95123448
+	Last:     10
+	Status:   3
+	StartRun: 1682616963
+	Parent:   simneu
+	queue:    *Default
+End
+Geometry: Geometry
+	Frame.tsplit: 1.0
+	Frame.vsplit: 1.0
+End
+
+# Plots information
+Plot: Red
+	Type: Geometry
+	basisu: 0 0 1
+	basisv: 1 0 0
+	coord: Z-X
+	extends: 9.34639 7.009792499999999
+	grid: 0
+	layer: Media
+	origin: 1.72282 0 0.950392
+End
+Plot: Green
+	Type: Geometry
+	basisu: 0.836516 0.0173377 0.547668
+	basisv: 0.224144 0.901221 -0.370891
+	extends: 11.215665478461514 2534.740398132302
+	layer: 3D
+	origin: 2.46976 1.77162 2.01482
+End
+Plot: Blue
+	Type: Geometry
+	basisu: 0 0 1
+	coord: Z-Y
+	extends: 13.458798574153812 10.09409893061536
+	layer: Media
+	origin: 0 -6.51214 0.829774
+End
+Plot: Magenta
+	Type: Geometry
+	coord: X-Y
+	extends: 100.0 75.0
+	grid: 0
+	layer: Media
+	origin: 3.24305 0 0.54214
+End
+Plot: sfera_angolo_tuttoAngoloSolido
+	Type: USR-1D
+	file.0: simneu_31_tab.lis
+	grid: 0
+	name.0: #Neu1_out  (integrated over solid angle)
+	ndetectors: 1
+	title: Sfera 90°
+	with.0: errorlines
+	xlog: 1
+	y.0: 1
+End
+Plot: sfera_dietro_tuttoAngoloSolido
+	Type: USR-1D
+	file.0: simneu_32_tab.lis
+	file.1: simneu_31_tab.lis
+	grid: 0
+	lc.1: dark-red
+	name.0: #Neu2_out  (integrated over solid angle)
+	name.1: #Neu1_out  (integrated over solid angle)
+	ndetectors: 2
+	title: Sfera dietro
+	with.0: linespoints
+	with.1: linespoints
+	xlog: 1
+	y.0: 1
+	y.1: 1
+End

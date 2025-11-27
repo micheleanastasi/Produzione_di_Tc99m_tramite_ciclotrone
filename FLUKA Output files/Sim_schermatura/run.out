@@ -1,0 +1,54 @@
+*-* Running: run
+Dir: /home/michele/Scrivania/Sim_schermatura
+Cmd: /usr/bin/nohup /usr/local/fluka/bin/rfluka -M 5 run
+
+                                   F L U K A
+
+Dir:   /usr/local/fluka
+Data:  /usr/local/fluka/data
+Exec:  /usr/local/fluka/bin/fluka
+Input: /home/michele/Scrivania/Sim_schermatura/run.inp
+Initial seed copied from /usr/local/fluka/data
+Running fluka in /home/michele/Scrivania/Sim_schermatura/fluka_2135141
+
+======================== Running FLUKA for cycle # 1 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.21" to "/home/michele/Scrivania/Sim_schermatura/run001_fort.21"
+     Moving "fort.22" to "/home/michele/Scrivania/Sim_schermatura/run001_fort.22"
+     Moving "fort.23" to "/home/michele/Scrivania/Sim_schermatura/run001_fort.23"
+======================== Running FLUKA for cycle # 2 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.21" to "/home/michele/Scrivania/Sim_schermatura/run002_fort.21"
+     Moving "fort.22" to "/home/michele/Scrivania/Sim_schermatura/run002_fort.22"
+     Moving "fort.23" to "/home/michele/Scrivania/Sim_schermatura/run002_fort.23"
+======================== Running FLUKA for cycle # 3 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.21" to "/home/michele/Scrivania/Sim_schermatura/run003_fort.21"
+     Moving "fort.22" to "/home/michele/Scrivania/Sim_schermatura/run003_fort.22"
+     Moving "fort.23" to "/home/michele/Scrivania/Sim_schermatura/run003_fort.23"
+======================== Running FLUKA for cycle # 4 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.21" to "/home/michele/Scrivania/Sim_schermatura/run004_fort.21"
+     Moving "fort.22" to "/home/michele/Scrivania/Sim_schermatura/run004_fort.22"
+     Moving "fort.23" to "/home/michele/Scrivania/Sim_schermatura/run004_fort.23"
+======================== Running FLUKA for cycle # 5 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.21" to "/home/michele/Scrivania/Sim_schermatura/run005_fort.21"
+     Moving "fort.22" to "/home/michele/Scrivania/Sim_schermatura/run005_fort.22"
+     Moving "fort.23" to "/home/michele/Scrivania/Sim_schermatura/run005_fort.23"
+End of FLUKA run

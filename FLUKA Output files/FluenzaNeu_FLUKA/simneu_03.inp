@@ -1,0 +1,94 @@
+#define energy -0.0191
+#define thickness 0.0589
+PHYSICS            1                                                  COALESCE
+PHYSICS            3                                                  EVAPORAT
+TITLE
+simNeutroni
+*Set the defaults for precision simulations
+DEFAULTS                                                              PRECISIO
+BEAM         $energy                38.5       0.2         0      -1.0PROTON
+*Define the beam position
+BEAMPOS                              -40
+GEOBEGIN                                                              COMBNAME
+    0    0          
+*Black body
+SPH blkbody    0.0 0.0 0.0 100.0
+*Cylindrical target
+RCC target     0.0 0.0 0.0 0.0 0.0 $thickness 0.75
+SPH sph_1      5.0 0 0 0.5
+SPH sph_2      0 0 5.0 0.5
+END
+*Black hole
+BLKBODY      5 -blkbody
+*Void around
+VOID         5 +blkbody -target -sph_1 -sph_2
+*Target
+TARGET       5 +target
+VD_sph1      5 +sph_1
+VD_sph2      5 +sph_2
+END
+GEOEND
+*Isotopes, material and compound definition
+MATERIAL          42               10.22                           100MO_100
+LOW-MAT       MO_100        42       100       296                    100-MO
+MATERIAL          42               10.22                            98MO_98
+LOW-MAT        MO_98        42        98       296                    98-MO
+MATERIAL          42               10.22                            97MO_97
+LOW-MAT        MO_97        42        97       296                    97-MO
+MATERIAL          42               10.22                            96MO_96
+LOW-MAT        MO_96        42        96       296                    96-MO
+MATERIAL          42               10.22                            95MO_95
+LOW-MAT        MO_95        42        95       296                    95-MO
+MATERIAL          42               10.22                            94MO_94
+LOW-MAT        MO_94        42        94       296                    94-MO
+MATERIAL          42               10.22                            92MO_92
+LOW-MAT        MO_92        42        92       296                    92-MO
+MATERIAL                           10.22                              MOLYB
+COMPOUND      0.9986    MO_100   0.00115     MO_98    0.0005     MO_97MOLYB
+COMPOUND      0.0005     MO_96    0.0005     MO_95    0.0005     MO_94MOLYB
+COMPOUND      0.0005     MO_92                                        MOLYB
+*COMPOUND         1.0    MO_100         0     MO_98         0     MO_97MOLYB
+ASSIGNMA    BLCKHOLE   BLKBODY
+ASSIGNMA      VACUUM      VOID
+ASSIGNMA       MOLYB    TARGET
+ASSIGNMA      VACUUM   VD_sph1
+ASSIGNMA      VACUUM   VD_sph2
+****************************************************************************
+*Requests simulation of radioactive decays and sets the corresponding
+*biasing and transport conditions
+RADDECAY           1         1
+*Define an irradiation profile for radioactive decay calculations
+IRRPROFI        36003.12076E14
+*Defines decay times for radioactive product scoring
+DCYTIMES         0.1       600
+**************************************************************************
+*Neutron fluence entering - Dim sfera R=0.5 cm
+USRBDX            99   NEUTRON       -31      VOID   VD_sph13.14159265Neu1_out
+USRBDX          0.02     1E-12      2000                            20 &
+*Neutron fluence entering - Dim sfera R=0.5 cm
+USRBDX            99   NEUTRON       -32      VOID   VD_sph23.14159265Neu2_out
+USRBDX          0.02     1E-12      2000                            20 &
+***********************************************************************
+*Neutron fluence after 0.1 sec
+*USRBDX            99   NEUTRON       -51      VOID   VD_sph13.14159265Neu1_01
+*USRBDX          0.02     1E-12      2000                            20 &
+*DCYSCORE           1                       Neu1_01                    USRBDX
+*Neutron fluence after 0.1 sec
+*USRBDX            99   NEUTRON       -52      VOID   VD_sph23.14159265Neu2_01
+*USRBDX          0.02     1E-12      2000                            20 &
+*DCYSCORE           1                       Neu2_01                    USRBDX
+***********************************************************************
+*Neutron fluence after 1200 sec
+*USRBDX            99   NEUTRON       -53      VOID   VD_sph13.14159265Neu1_600
+*USRBDX          0.02     1E-12      2000                            20 &
+*DCYSCORE           2                      Neu1_600                    USRBDX
+*Neutron fluence after 1200 sec
+*USRBDX            99   NEUTRON       -54      VOID   VD_sph23.14159265Neu2_600
+*USRBDX          0.02     1E-12      2000                            20 &
+*DCYSCORE           2                      Neu2_600                    USRBDX
+*************************************************************************
+*Set the random number seed
+RANDOMIZ              95123447
+*Set the number of primary histories to be simulated in the run
+START      500000000
+STOP

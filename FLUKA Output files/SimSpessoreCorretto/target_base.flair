@@ -1,0 +1,374 @@
+# flair project file
+Version: 300
+Mode: fluka
+Title: target_base
+md5: e8df10a039fcaccaadc39b34e5022e53
+Input:
+#define energy -0.010
+#define type PROTON
+#define thickness 0.03
+PHYSICS COALESCE 1
+PHYSICS EVAPORAT 3
+TITLE
+	target_base
+*Set the defaults for precision simulations
+DEFAULTS PRECISIO
+#if type
+BEAM PROTON $energy,, 38.5 0.2 0 -1.0
+	scale=5000
+	@select=1
+#else
+BEAM DEUTERON $energy,, 25.0 0.2 0 -1.0
+	scale=4000
+#endif
+*Define the beam position
+BEAMPOS ,,, -40
+GEOBEGIN COMBNAME
+*Black body
+SPH blkbody 0.0 0.0 0.0 100.0
+*Cylindrical target
+RCC target 0.0 0.0 0.0 0.0 0.0 $thickness 0.75
+XYP body1 $thickness
+	@select=8
+END
+*Black hole
+REGION BLKBODY 5
+	-blkbody
+*Void around
+REGION VOID_1 5
+	+blkbody -target +body1
+*Target
+REGION TARGET 5
+	+target
+REGION VOID_2
+	+blkbody -target -body1
+END
+GEOEND
+*Isotopes, material and compound definition
+MATERIAL MO_100 42,, 10.22,,, 100
+LOW-MAT 100-MO MO_100 42 100 296
+MATERIAL MO_98 42,, 10.22,,, 98
+LOW-MAT 98-MO MO_98 42 98 296
+MATERIAL MO_97 42,, 10.22,,, 97
+LOW-MAT 97-MO MO_97 42 97 296
+MATERIAL MO_96 42,, 10.22,,, 96
+LOW-MAT 96-MO MO_96 42 96 296
+MATERIAL MO_95 42,, 10.22,,, 95
+LOW-MAT 95-MO MO_95 42 95 296
+MATERIAL MO_94 42,, 10.22,,, 94
+LOW-MAT 94-MO MO_94 42 94 296
+MATERIAL MO_92 42,, 10.22,,, 92
+LOW-MAT 92-MO MO_92 42 92 296
+MATERIAL MOLYB,,, 10.22
+COMPOUND MOLYB 0.9986 MO_100 0.00115 MO_98 0.0005 MO_97 0.0005 MO_96 0.0005 MO_95 \
+	 0.0005 MO_94 0.0005 MO_92
+!COMPOUND MOLYB 1.0 MO_100 0 MO_98 0 MO_97
+ASSIGNMA , BLCKHOLE BLKBODY
+ASSIGNMA , VACUUM VOID_1
+ASSIGNMA , MOLYB TARGET
+ASSIGNMA , VACUUM VOID_2
+****************************************************************************
+*Requests simulation of radioactive decays and sets the corresponding
+*biasing and transport conditions
+RADDECAY , 1 1
+*Define an irradiation profile for radioactive decay calculations
+IRRPROFI , =1*hour 6241509074461
+*Defines decay times for radioactive product scoring
+DCYTIMES , 0.1 1200 2400 3600 4800 6000
+*********************************************************************
+*Energy
+!USRBIN energy 11 ENERGY -21 1 0 0.1 0 0 -0.1 400 1 400
+*Neutron fluence
+!USRBIN neutrons 11 NEUTRON -22 2 0 0.4 0 0 -0.4 600 1 600
+*Proton fluence
+!USRBIN photon 11 PROTON -23 2 0 0.2 0 0 -0.2 600 1 600
+*PHoton fluence
+!USRBIN photon 11 PHOTON -24 2 0 0.2 0 0 -0.2 600 1 600
+*********************************************************************
+*Proton fluence entering
+USRBDX Pro_in 99 PROTON -31 VOID_1 TARGET =pi*0.75*0.75*2+pi*0.75*thickness 0.02 \
+	 1E-4 1000
+*Proton fluence exiting
+USRBDX Pro_out 99 PROTON -32 TARGET VOID_2 =pi*0.75*0.75 0.02 1E-4 1000
+*Photon fluence exiting
+USRBDX Pho_out 99 PHOTON -33 TARGET VOID_1 =pi*0.75*0.75*2+pi*0.75*thickness 0.02 \
+	 1E-6 1000
+*Neutron fluence exiting
+USRBDX Neu_out 99 NEUTRON -34 TARGET VOID_1 =pi*0.75*0.75*2+pi*0.75*thickness 0.02 \
+	 1E-6 1000
+**********************************************************************
+*Produzione
+RESNUCLE Product 3 -41,,, TARGET =pi*0.75*0.75*thickness
+*Attività 1sec
+RESNUCLE Acti_1 3 -42,,, TARGET =pi*0.75*0.75*thickness
+DCYSCORE RESNUCLE 1,,, Acti_1
+*Attività 20min
+RESNUCLE Acti_1200 3 -43,,, TARGET =pi*0.75*0.75*thickness
+DCYSCORE RESNUCLE 2,,, Acti_1200
+*Attività 40min
+RESNUCLE Acti_2400 3 -44,,, TARGET =pi*0.75*0.75*thickness
+DCYSCORE RESNUCLE 3,,, Acti_2400
+*Attività 60min
+RESNUCLE Acti_3600 3 -45,,, TARGET =pi*0.75*0.75*thickness
+DCYSCORE RESNUCLE 4,,, Acti_3600
+*Attività 80min
+RESNUCLE Acti_4800 3 -46,,, TARGET =pi*0.75*0.75*thickness
+DCYSCORE RESNUCLE 5,,, Acti_4800
+*Attività 80min
+RESNUCLE Acti_6000 3 -47,,, TARGET =pi*0.75*0.75*thickness
+DCYSCORE RESNUCLE 6,,, Acti_6000
+***********************************************************************
+*Photon fluence after 0.5 hours
+USRBDX pho_1 99 PHOTON -51 TARGET VOID_1 =pi*0.75*0.75*2+2*pi*0.75*thickness 0.2 \
+	 1E-6 1000
+DCYSCORE USRBDX 1,,, pho_1
+***********************************************************************
+*Photon fluence after 3 hours
+!USRBDX pho_3 99 PHOTON -52 TARGET VOID_1 =pi*0.75*0.75*2+2*pi*0.75*0.026 0.2 1E-6 \
+	 1000
+!DCYSCORE USRBDX 2,,, pho_3
+***********************************************************************
+*Photon fluence after 18 hours
+!USRBDX pho_18 99 PHOTON -53 TARGET VOID_1 =pi*0.75*0.75*2+2*pi*0.75*0.026 0.2 1E-6 \
+	 1000
+!DCYSCORE USRBDX =18*hour,,, pho_18
+************************************************************************
+*PHoton fluence 0.5 hours
+!USRBIN phobin_5 11 PHOTON -61 2 0 0.2 0 0 -0.2 600 1 600
+!DCYSCORE USRBIN 1,,, phobin_5
+************************************************************************
+*PHoton fluence 3 hours
+!USRBIN phobin_3 11 PHOTON -62 2 0 0.2 0 0 -0.2 600 1 600
+!DCYSCORE USRBIN 2,,, phobin_3
+************************************************************************
+*PHoton fluence 18 hours
+!USRBIN phobin18 11 PHOTON -63 2 0 0.2 0 0 -0.2 600 1 600
+!DCYSCORE USRBIN 3,,, phobin18
+*************************************************************************
+*Set the random number seed
+RANDOMIZ ,, 595959
+*Set the number of primary histories to be simulated in the run
+START , 300000000
+STOP
+EndInput
+
+Page: Plot
+Calculator:
+	|C_p = 1.602176634e-19
+	|I = 1e-6
+	|Qta = I/C_p
+	|> Qta = 6241509074460.763
+plotengine: Gnuplot
+
+# Run information
+Run: <default>
+	StartRun: 1679648513
+	queue:    *Default
+End
+Run: corretto
+	Define:   energy=-0.0191
+	Define:   type
+	Define:   thickness=0.0589
+	Rnd:      95123444
+	Last:     10
+	Status:   3
+	mode:     fluka
+	StartRun: 1681764478
+	queue:    *Default
+End
+Run: corretto_01
+	Rnd:      12345679
+	Last:     10
+	Status:   3
+	StartRun: 1681767900
+	Parent:   corretto
+	queue:    *Default
+End
+Run: corretto_02
+	Rnd:      12345680
+	Last:     10
+	Status:   3
+	StartRun: 1681767900
+	Parent:   corretto
+	queue:    *Default
+End
+Run: corretto_03
+	Rnd:      12345681
+	Last:     10
+	Status:   3
+	StartRun: 1681767900
+	Parent:   corretto
+	queue:    *Default
+End
+Run: corretto_04
+	Rnd:      12345682
+	Last:     10
+	Status:   3
+	StartRun: 1681767900
+	Parent:   corretto
+	queue:    *Default
+End
+Geometry: Geometry
+	Frame.tsplit: 1.0
+	Frame.vsplit: 1.0
+End
+
+# Plots information
+Plot: Red
+	Type: Geometry
+	basisu: 0 0 1
+	basisv: 1 0 0
+	coord: Z-X
+	extends: 16.15055999999997 7.885787870036086
+	grid: 0
+	layer: Media
+	origin: -3.59748 0 7.89217
+End
+Plot: Green
+	Type: Geometry
+	basisu: 0.836516 0.0173377 0.547668
+	basisv: 0.224144 0.901221 -0.370891
+	extends: 4.507324411032951 2438.4625063688263
+	layer: 3D
+	origin: -0.346945 0.55147 0.841462
+End
+Plot: Blue
+	Type: Geometry
+	basisu: 0 0 1
+	coord: Z-Y
+	extends: 100.0 0.18050541516245489
+	layer: Media
+End
+Plot: Magenta
+	Type: Geometry
+	coord: X-Y
+	extends: 100 0.180505
+	grid: 0
+	layer: Media
+End
+Plot: target_base_31_plot
+	Type: USR-1D
+	file.0: corretto_31_tab.lis
+	grid: 0
+	lc.0: red
+	lw.0: 2
+	name.0: Detector 1
+	ndetectors: 1
+	title: USR-1D target base 31
+	with.0: linespoints
+	x.0: 2
+	xlog: 1
+	y.0: 0
+	ylog: 1
+End
+Plot: target_base_32_plot
+	Type: USR-1D
+	file.0: corretto_32_tab.lis
+	grid: 0
+	lc.0: red
+	lw.0: 2
+	name.0: Detector 1
+	ndetectors: 1
+	title: USR-1D target base 32
+	with.0: linespoints
+	x.0: 2
+	xlog: 1
+	y.0: 0
+	ylog: 1
+End
+Plot: target_base_33_plot
+	Type: USR-1D
+	file.0: corretto_33_tab.lis
+	grid: 0
+	lc.0: red
+	name.0: Detector 1
+	ndetectors: 1
+	title: USR-1D target base 33
+	with.0: linespoints
+	x.0: 2
+	xlog: 1
+	y.0: 0
+End
+Plot: target_base_34_plot
+	Type: USR-1D
+	file.0: corretto_34_tab.lis
+	grid: 0
+	lc.0: red
+	lw.0: 2
+	name.0: Detector 1
+	ndetectors: 1
+	title: USR-1D target base 34
+	with.0: errorbars
+	x.0: 2
+	xlog: 1
+	y.0: 0
+	ylog: 1
+End
+Plot: target_base_41_plot
+	Type: RESNUCLE
+	datafile: corretto_41.rnc
+	grid: 0
+	plot: Z
+	title: RESNUCLE target base 41
+End
+Plot: target_base_42_plot
+	Type: RESNUCLE
+	datafile: corretto_42.rnc
+	grid: 0
+	plot: Z/A
+	title: RESNUCLE target base 42
+End
+Plot: target_base_43_plot
+	Type: RESNUCLE
+	datafile: corretto_43.rnc
+	grid: 0
+	plot: Z
+	title: RESNUCLE target base 43
+End
+Plot: target_base_44_plot
+	Type: RESNUCLE
+	datafile: corretto_44.rnc
+	grid: 0
+	plot: Z
+	title: RESNUCLE target base 44
+End
+Plot: target_base_45_plot
+	Type: RESNUCLE
+	datafile: corretto_45.rnc
+	grid: 0
+	plot: Z
+	title: RESNUCLE target base 45
+End
+Plot: target_base_46_plot
+	Type: RESNUCLE
+	datafile: corretto_46.rnc
+	grid: 0
+	plot: Z
+	title: RESNUCLE target base 46
+End
+Plot: target_base_47_plot
+	Type: RESNUCLE
+	datafile: corretto_47.rnc
+	grid: 0
+	plot: Z
+	title: RESNUCLE target base 47
+End
+Plot: target_base_51_plot
+	Type: USR-1D
+	file.0: corretto_51_tab.lis
+	grid: 0
+	lc.0: red
+	lw.0: 2
+	name.0: Detector 1
+	ndetectors: 1
+	title: USR-1D target base 51
+	with.0: linespoints
+	x.0: 2
+	xlog: 1
+	xmax: 0.003
+	xmin: 1e-5
+	y.0: 0
+	ylog: 1
+	ymax: 10000000000000000.0
+	ymin: 0
+End

@@ -1,0 +1,2 @@
+Dati fascio: 1uA per 1h, come convenzione usata
+Infatti dati analitici presi per yield ottenuto dopo bombardamento di 1h  a 1uA

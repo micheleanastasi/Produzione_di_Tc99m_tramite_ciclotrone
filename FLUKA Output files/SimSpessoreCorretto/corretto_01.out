@@ -1,0 +1,184 @@
+*-* Running: corretto_01
+Dir: /home/michele/Desktop/New Folder
+Cmd: /usr/bin/nohup /usr/local/fluka/bin/rfluka -M 10 corretto_01
+
+                                   F L U K A
+
+Dir:   /usr/local/fluka
+Data:  /usr/local/fluka/data
+Exec:  /usr/local/fluka/bin/fluka
+Input: /home/michele/Desktop/New Folder/corretto_01.inp
+Initial seed copied from /usr/local/fluka/data
+Running fluka in /home/michele/Desktop/New Folder/fluka_5670
+
+======================== Running FLUKA for cycle # 1 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01001_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01001_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01001_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01001_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01001_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01001_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01001_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01001_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01001_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01001_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01001_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01001_fort.51"
+======================== Running FLUKA for cycle # 2 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01002_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01002_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01002_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01002_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01002_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01002_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01002_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01002_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01002_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01002_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01002_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01002_fort.51"
+======================== Running FLUKA for cycle # 3 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01003_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01003_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01003_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01003_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01003_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01003_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01003_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01003_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01003_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01003_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01003_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01003_fort.51"
+======================== Running FLUKA for cycle # 4 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01004_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01004_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01004_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01004_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01004_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01004_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01004_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01004_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01004_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01004_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01004_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01004_fort.51"
+======================== Running FLUKA for cycle # 5 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01005_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01005_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01005_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01005_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01005_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01005_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01005_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01005_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01005_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01005_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01005_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01005_fort.51"
+======================== Running FLUKA for cycle # 6 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01006_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01006_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01006_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01006_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01006_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01006_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01006_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01006_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01006_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01006_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01006_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01006_fort.51"
+======================== Running FLUKA for cycle # 7 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01007_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01007_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01007_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01007_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01007_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01007_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01007_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01007_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01007_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01007_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01007_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01007_fort.51"
+======================== Running FLUKA for cycle # 8 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01008_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01008_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01008_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01008_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01008_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01008_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01008_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01008_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01008_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01008_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01008_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01008_fort.51"
+======================== Running FLUKA for cycle # 9 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01009_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01009_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01009_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01009_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01009_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01009_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01009_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01009_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01009_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01009_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01009_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01009_fort.51"
+======================== Running FLUKA for cycle # 10 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.31" to "/home/michele/Desktop/New Folder/corretto_01010_fort.31"
+     Moving "fort.32" to "/home/michele/Desktop/New Folder/corretto_01010_fort.32"
+     Moving "fort.33" to "/home/michele/Desktop/New Folder/corretto_01010_fort.33"
+     Moving "fort.34" to "/home/michele/Desktop/New Folder/corretto_01010_fort.34"
+     Moving "fort.41" to "/home/michele/Desktop/New Folder/corretto_01010_fort.41"
+     Moving "fort.42" to "/home/michele/Desktop/New Folder/corretto_01010_fort.42"
+     Moving "fort.43" to "/home/michele/Desktop/New Folder/corretto_01010_fort.43"
+     Moving "fort.44" to "/home/michele/Desktop/New Folder/corretto_01010_fort.44"
+     Moving "fort.45" to "/home/michele/Desktop/New Folder/corretto_01010_fort.45"
+     Moving "fort.46" to "/home/michele/Desktop/New Folder/corretto_01010_fort.46"
+     Moving "fort.47" to "/home/michele/Desktop/New Folder/corretto_01010_fort.47"
+     Moving "fort.51" to "/home/michele/Desktop/New Folder/corretto_01010_fort.51"
+End of FLUKA run

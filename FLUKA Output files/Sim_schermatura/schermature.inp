@@ -1,0 +1,85 @@
+#define energy -0.01
+#define thickness 0.03
+PHYSICS            1                                                  COALESCE
+PHYSICS            3                                                  EVAPORAT
+TITLE
+schermatura
+*Set the defaults for precision simulations
+DEFAULTS                                                              PRECISIO
+!@what.3=atan(0.75/40)*2*1000
+!@scale=5000
+BEAM         $energy          37.4956064      -0.3      -0.3       1.0PROTON
+*Define the beam position
+BEAMPOS                              -40
+GEOBEGIN                                                              COMBNAME
+    0    0          
+*Black body
+SPH blkbody    0.0 0.0 0.0 500
+*Cylindrical target
+RCC target     0.0 0.0 0.0 0.0 0.0 $thickness 0.75
+RPP box_1      -250 250 -220 280 -250 250
+RPP box_2      -150 150 -120 180 -150 150
+END
+*Black hole
+BLKBODY      5 -blkbody
+*Void around
+VOID         5 +blkbody -target -box_1
+*Target
+TARGET       5 +target
+WALL         5 +box_1 -box_2
+AIR          5 +box_2 -target
+END
+GEOEND
+*Isotopes, material and compound definition
+MATERIAL          42               10.22                           100MO_100
+LOW-MAT       MO_100        42       100       296                    100-MO
+MATERIAL          42               10.22                            98MO_98
+LOW-MAT        MO_98        42        98       296                    98-MO
+MATERIAL          42               10.22                            97MO_97
+LOW-MAT        MO_97        42        97       296                    97-MO
+MATERIAL          42               10.22                            96MO_96
+LOW-MAT        MO_96        42        96       296                    96-MO
+MATERIAL          42               10.22                            95MO_95
+LOW-MAT        MO_95        42        95       296                    95-MO
+MATERIAL          42               10.22                            94MO_94
+LOW-MAT        MO_94        42        94       296                    94-MO
+MATERIAL          42               10.22                            92MO_92
+LOW-MAT        MO_92        42        92       296                    92-MO
+MATERIAL                           10.22                              MOLYB
+COMPOUND      0.9986    MO_100   0.00115     MO_98    0.0005     MO_97MOLYB
+COMPOUND      0.0005     MO_96    0.0005     MO_95    0.0005     MO_94MOLYB
+COMPOUND      0.0005     MO_92                                        MOLYB
+MATERIAL          19               0.862                              POTASSIU
+*Concrete portland
+*Concrete has a wide variation in density and composition.
+MATERIAL                             2.3                              PORTLAND
+COMPOUND       -0.01  HYDROGEN    -0.001    CARBON -0.529107    OXYGENPORTLAND
+COMPOUND      -0.016    SODIUM    -0.002  MAGNESIU -0.033872  ALUMINUMPORTLAND
+COMPOUND   -0.337021   SILICON    -0.013  POTASSIU    -0.044   CALCIUMPORTLAND
+COMPOUND      -0.014      IRON                                        PORTLAND
+ASSIGNMA    BLCKHOLE   BLKBODY
+ASSIGNMA      VACUUM      VOID
+ASSIGNMA       MOLYB    TARGET
+ASSIGNMA    PORTLAND      WALL
+ASSIGNMA         AIR       AIR
+****************************************************************************
+*Requests simulation of radioactive decays and sets the corresponding
+*biasing and transport conditions
+RADDECAY           1         1
+*Define an irradiation profile for radioactive decay calculations
+!@what.1=1*hour
+IRRPROFI        36006.24151E12
+*Defines decay times for radioactive product scoring
+DCYTIMES        0.01
+USRBIN            10   NEUTRON       -21       280       310       280neu
+USRBIN          -280      -250      -280       100       100       100 &
+USRBIN            10    PHOTON       -22       280       310       280pho
+USRBIN          -280      -250      -280       100       100       100 &
+USRBIN            10   DOSE-EQ       -23       280       310       280doseEq
+USRBIN          -280      -250      -280       100       100       100 &
+*************************************************************************
+*Set the random number seed
+RANDOMIZ                595959
+*Set the number of primary histories to be simulated in the run
+START         150000
+STOP

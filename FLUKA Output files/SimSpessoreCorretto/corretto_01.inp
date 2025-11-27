@@ -1,0 +1,148 @@
+#define energy -0.0191
+#define type PROTON
+#define thickness 0.0589
+PHYSICS            1                                                  COALESCE
+PHYSICS            3                                                  EVAPORAT
+TITLE
+target_base
+*Set the defaults for precision simulations
+DEFAULTS                                                              PRECISIO
+#if type
+BEAM         $energy                38.5       0.2         0      -1.0PROTON
+#else
+BEAM         $energy                25.0       0.2         0      -1.0DEUTERON
+#endif
+*Define the beam position
+BEAMPOS                              -40
+GEOBEGIN                                                              COMBNAME
+    0    0          
+*Black body
+SPH blkbody    0.0 0.0 0.0 100.0
+*Cylindrical target
+RCC target     0.0 0.0 0.0 0.0 0.0 $thickness 0.75
+XYP body1      $thickness
+END
+*Black hole
+BLKBODY      5 -blkbody
+*Void around
+VOID_1       5 +blkbody -target +body1
+*Target
+TARGET       5 +target
+VOID_2       5 +blkbody -target -body1
+END
+GEOEND
+*Isotopes, material and compound definition
+MATERIAL          42               10.22                           100MO_100
+LOW-MAT       MO_100        42       100       296                    100-MO
+MATERIAL          42               10.22                            98MO_98
+LOW-MAT        MO_98        42        98       296                    98-MO
+MATERIAL          42               10.22                            97MO_97
+LOW-MAT        MO_97        42        97       296                    97-MO
+MATERIAL          42               10.22                            96MO_96
+LOW-MAT        MO_96        42        96       296                    96-MO
+MATERIAL          42               10.22                            95MO_95
+LOW-MAT        MO_95        42        95       296                    95-MO
+MATERIAL          42               10.22                            94MO_94
+LOW-MAT        MO_94        42        94       296                    94-MO
+MATERIAL          42               10.22                            92MO_92
+LOW-MAT        MO_92        42        92       296                    92-MO
+MATERIAL                           10.22                              MOLYB
+COMPOUND      0.9986    MO_100   0.00115     MO_98    0.0005     MO_97MOLYB
+COMPOUND      0.0005     MO_96    0.0005     MO_95    0.0005     MO_94MOLYB
+COMPOUND      0.0005     MO_92                                        MOLYB
+*COMPOUND         1.0    MO_100         0     MO_98         0     MO_97MOLYB
+ASSIGNMA    BLCKHOLE   BLKBODY
+ASSIGNMA      VACUUM    VOID_1
+ASSIGNMA       MOLYB    TARGET
+ASSIGNMA      VACUUM    VOID_2
+****************************************************************************
+*Requests simulation of radioactive decays and sets the corresponding
+*biasing and transport conditions
+RADDECAY           1         1
+*Define an irradiation profile for radioactive decay calculations
+IRRPROFI        36006.24151E12
+*Defines decay times for radioactive product scoring
+DCYTIMES         0.1      1200      2400      3600      4800      6000
+*********************************************************************
+*Energy
+*USRBIN            11    ENERGY       -21         1         0       0.1energy
+*USRBIN             0         0      -0.1       400         1       400 &
+*Neutron fluence
+*USRBIN            11   NEUTRON       -22         2         0       0.4neutrons
+*USRBIN             0         0      -0.4       600         1       600 &
+*Proton fluence
+*USRBIN            11    PROTON       -23         2         0       0.2photon
+*USRBIN             0         0      -0.2       600         1       600 &
+*PHoton fluence
+*USRBIN            11    PHOTON       -24         2         0       0.2photon
+*USRBIN             0         0      -0.2       600         1       600 &
+*********************************************************************
+*Proton fluence entering
+USRBDX            99    PROTON       -31    VOID_1    TARGET3.67307159Pro_in
+USRBDX          0.02      1E-4      1000                               &
+*Proton fluence exiting
+USRBDX            99    PROTON       -32    TARGET    VOID_21.76714587Pro_out
+USRBDX          0.02      1E-4      1000                               &
+*Photon fluence exiting
+USRBDX            99    PHOTON       -33    TARGET    VOID_13.67307159Pho_out
+USRBDX          0.02      1E-6      1000                               &
+*Neutron fluence exiting
+USRBDX            99   NEUTRON       -34    TARGET    VOID_13.67307159Neu_out
+USRBDX          0.02      1E-6      1000                               &
+**********************************************************************
+*Produzione
+RESNUCLE           3       -41                        TARGET0.10408489Product
+*Attività 1sec
+RESNUCLE           3       -42                        TARGET0.10408489Acti_1
+DCYSCORE           1                        Acti_1                    RESNUCLE
+*Attività 20min
+RESNUCLE           3       -43                        TARGET0.10408489Acti_1200
+DCYSCORE           2                     Acti_1200                    RESNUCLE
+*Attività 40min
+RESNUCLE           3       -44                        TARGET0.10408489Acti_2400
+DCYSCORE           3                     Acti_2400                    RESNUCLE
+*Attività 60min
+RESNUCLE           3       -45                        TARGET0.10408489Acti_3600
+DCYSCORE           4                     Acti_3600                    RESNUCLE
+*Attività 80min
+RESNUCLE           3       -46                        TARGET0.10408489Acti_4800
+DCYSCORE           5                     Acti_4800                    RESNUCLE
+*Attività 80min
+RESNUCLE           3       -47                        TARGET0.10408489Acti_6000
+DCYSCORE           6                     Acti_6000                    RESNUCLE
+***********************************************************************
+*Photon fluence after 0.5 hours
+USRBDX            99    PHOTON       -51    TARGET    VOID_13.81185145pho_1
+USRBDX           0.2      1E-6      1000                               &
+DCYSCORE           1                         pho_1                    USRBDX
+***********************************************************************
+*Photon fluence after 3 hours
+*USRBDX            99    PHOTON       -52    TARGET    VOID_13.65681385pho_3
+*USRBDX           0.2      1E-6      1000                               &
+*DCYSCORE           2                         pho_3                    USRBDX
+***********************************************************************
+*Photon fluence after 18 hours
+*USRBDX            99    PHOTON       -53    TARGET    VOID_13.65681385pho_18
+*USRBDX           0.2      1E-6      1000                               &
+*DCYSCORE       64800                        pho_18                    USRBDX
+************************************************************************
+*PHoton fluence 0.5 hours
+*USRBIN            11    PHOTON       -61         2         0       0.2phobin_5
+*USRBIN             0         0      -0.2       600         1       600 &
+*DCYSCORE           1                      phobin_5                    USRBIN
+************************************************************************
+*PHoton fluence 3 hours
+*USRBIN            11    PHOTON       -62         2         0       0.2phobin_3
+*USRBIN             0         0      -0.2       600         1       600 &
+*DCYSCORE           2                      phobin_3                    USRBIN
+************************************************************************
+*PHoton fluence 18 hours
+*USRBIN            11    PHOTON       -63         2         0       0.2phobin18
+*USRBIN             0         0      -0.2       600         1       600 &
+*DCYSCORE           3                      phobin18                    USRBIN
+*************************************************************************
+*Set the random number seed
+RANDOMIZ              12345679
+*Set the number of primary histories to be simulated in the run
+START      300000000
+STOP
